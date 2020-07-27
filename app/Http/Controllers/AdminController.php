@@ -83,7 +83,7 @@ class AdminController extends Controller
                 } else {
                     $query = DB::table('users')->where('email', $user->email)->update(['password' => Hash::make($new_passwd)]);
                     if ($query == 1) {
-                        return back()->with('msg','Modification a été bien effectué');
+                        return view('admin.index',['user'=>$user])->with('msg','Modification a été bien effectuée');
                     } else {
                         return view('admin.errors.500', ['user' => $user]);
                     }

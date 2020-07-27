@@ -27,7 +27,7 @@
                           
                     
                     <div class="card-header">
-                            <h4>{{__('Configure votre compte')}}</h4>
+                            <h4>{{__('Configurer votre compte')}}</h4>
                             
                         </div>
                         <div class="card-body">
@@ -60,7 +60,7 @@
                                  
                             </div>
                             <div class="form-group col-md-6 col-12">
-                            <form method="POST" action="{{ route('admin.password_reset') }}">
+                            <form method="POST" action="{{ route('admin.password_reset') }}" name="myform">
                         @csrf
 
                             <label>{{__('Mot de passe ancien')}}</label>
@@ -89,8 +89,10 @@
                             
                         </div>
                         <div class="card-footer text-right">
-                            <button type="submit" class="btn btn-primary">{{__('Enregistrer les modifications')}}</button>
-                        </div>
+                    <button class="btn btn-primary" data-confirm="Realy?|Do you want to continue?"
+                     data-confirm-yes="submitform();">{{__('Enregistrer les modifications')}}</button>
+                            
+                         </div>
 
                     </form>
                      </div>
@@ -109,4 +111,10 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+function submitform()
+{
+  document.myform.submit();
+}
+</script>
 @endsection

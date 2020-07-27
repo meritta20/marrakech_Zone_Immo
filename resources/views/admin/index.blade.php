@@ -1,6 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
+@if(!empty(Session::get('msg')))
+
+<script>
+  
+	swal('Good Job', 'You clicked the button!', 'success');
+ 
+</script>
+@endif
   <section class="section">
           <div class="section-header">
             <h1>Dashboard</h1>
