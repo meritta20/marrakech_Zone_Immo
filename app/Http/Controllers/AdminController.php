@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Immobilier;
+use App\TypeImmobilier;
 use App\User;
+use Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,8 +15,9 @@ class AdminController extends Controller
 {
 
     public function login()
-    {
-        return view('auth/login');
+    {   $types_immo=TypeImmobilier::all();
+        Session::put('types_immo',$types_immo);
+        return view('auth.login');
     }
 
 
@@ -21,10 +25,39 @@ class AdminController extends Controller
     public function index()
     {
         // dd(Auth::user());
-        return view('admin.index');
+        
+      
+        return view('admin.index',['user'=>Auth::user()]);
     }
 
+     
+    public function indexImmo($categorie)
+    {
+        $immobiliers=DB::table('immobiliers')->where('id_type',$categorie)->get();
+        Session::put('empty',0);
 
+        $count=count($immobiliers);
+       
+        if($count==0){
+              $empty=1;
+Session::put('empty',1);
+            return view('admin.immobilier.index',[
+                'user'=>Auth::user(),
+                
+           ]);
+
+        }
+        else{
+            $types_immo=TypeImmobilier::all();
+
+
+             return view('admin.immobilier.index',[
+                'user'=>Auth::user(),
+                
+            'immos'=>$immobiliers]);
+        }
+   
+    }
 
     public function edit()
     {

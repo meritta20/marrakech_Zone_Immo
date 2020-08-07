@@ -12,7 +12,7 @@
 <div class="section-body">
       <div class="row">
         @foreach ($cars_s as $key=>$car)
-          {{-- start widget --}}
+          <!-- {{-- start widget --}} -->
             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                 <article class="article">
                   <div class="article-header">
@@ -22,14 +22,14 @@
                   </div>
                   <div class="article-details">
                       <a>{{ $car->libelle }}</a>
-                    <div class="article-cta">
+                    <div class="col-6 article-cta">
                       <a href="{{ route('car.edit',['car' => $car->id]) }}" class="btn btn-primary">Modifier</a>
-                      <button class="btn btn-danger" data-confirm="Suppréssion de {{$car->libelle}}?|voulez vous vraiment supprimer ce produit?" data-confirm-yes="location.href = '{{ route('car.delete',['car' => $car->id]) }}'">Supprimer</button>
+                      <button class="btn btn-danger" data-confirm="Suppression de {{$car->libelle}}?|voulez vous vraiment supprimer ce produit?" data-confirm-yes="location.href = '{{ route('car.delete',['car' => $car->id]) }}'">Supprimer</button>
                     </div>
                   </div>
                 </article>
             </div>
-            {{-- end widget --}}
+            <!-- {{-- end widget --}} -->
        @endforeach
 
             </div>

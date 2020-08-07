@@ -6,11 +6,11 @@ $("#swal-1").click(function() {
 
  
 $("#swal-3").click(function() {
-	swal('Good Job', 'You clicked the button!', 'warning');
+	swal('Attention', 'Vous ne pouvez pas sélectionner plus de 4 images !', 'warning');
 });
 
 $("#swal-4").click(function() {
-	swal('Good Job', 'You clicked the button!', 'info');
+	swal('Infos', "Vous n'avez pas insérer aucun immobilier,veuillez créer une fiche immobilier.Merci!", 'info');
 });
 
 $("#swal-5").click(function() {

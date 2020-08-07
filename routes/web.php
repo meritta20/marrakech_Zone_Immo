@@ -49,11 +49,13 @@ Route::get('/test', function(){
  */Auth::routes();
 Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
 Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');
+ 
+Route::post('/immo_vente', 'ImmobilierController@filter')->name('immo.filter');
 
 Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
 
 /************************************************* ADMIN */
-Route::get('/admin', 'AdminController@login')->name('admin.login');
+    Route::get('/admin', 'AdminController@login')->name('admin.login');
 // Route::get('/home', 'AdminController@index')->name('admin.index');
 Route::get('/index', 'AdminController@index')->name('admin.index');
 Route::get('/edit_profile', 'AdminController@edit')->name('admin.edit.profile');
@@ -81,8 +83,12 @@ Route::get('/admin/car/edit/{car}', 'CarController@edit')->name('car.edit');
 Route::post('/scaredit/{car}', 'CarController@storeEdit')->name('car.storeEdit');
 
 Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar.index');
+Route::get('/admin/immo/{categorie}', 'AdminController@indexImmo')->name('admin.immobilier');
+Route::post('immo/create', 'ImmobilierController@create')->name('immobilier.create');
+Route::get('immo/create/index', 'ImmobilierController@indexCreate')->name('immobilier.indexCreate');
 
 Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
+Route::get('immo/index', 'ImmobilierController@index')->name('admin.immobilier.index');
 
 Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
 Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');

@@ -3,7 +3,7 @@
 @section('content')
 <div class="section">
 <div class="section-header">
-<h1>Creation de votre fiche de voiture</h1>
+<h1>Céeation de votre fiche de voiture</h1>
 </div>
 <div class="container">
 
@@ -324,7 +324,7 @@
                                     </div>
  --}}
                                     <div class="form-group row  mt-0 ml-auto">
-                                        <button class="btn btn-primary" name="create_car">Creer</button>
+                                        <button class="btn btn-primary" name="create_car">Créer</button>
                                     </div>
                                    </div>
                                 </div>

@@ -148,6 +148,56 @@ $(document).ready(function(){
     });
 
 });
+//filter immobiliers
+
+$(document).ready(function(){
+   $("#filterCat").change(function(){
+    var wds_t = $("[class*=GridLex-grid]>[class*=_mx-widget]").toArray();
+    var l_wd = wds_t.length ;
+       var srh_txt = $("#filterCat").val().toLowerCase();
+     
+       var wds = ".hidden-meri-filter-cat";
+
+       if(srh_txt != ""){
+       $(".hero-mx-srch .form .btn-all-mx").removeClass("display-wd");
+       $(".tmx").addClass("display-wd");
+       $(".pmx").addClass("pmx-p");
+       }
+       $(wds).each(function(){
+        var txt = $(this).val ().toLowerCase();
+        if(txt.includes(srh_txt)){
+            $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").removeClass("display-wd"); 
+        }else{
+            $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").addClass("display-wd");
+            l_wd = l_wd - 1;
+        }
+
+       });
+       if(l_wd == 0){
+        $(".smx").removeClass("display-wd");
+       }
+
+   });
+   $(".hero-mx-srch .form .btn-all-mx").click(function(){
+    $(this).addClass("display-wd");
+    $(".smx").addClass("display-wd");
+    $(".tmx").removeClass("display-wd");
+       $(".pmx").removeClass("pmx-p");
+       var wds = ".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget";
+
+       $(wds).each(function(){
+        if( $(this).attr("data-widget") != 1 ){
+            $(this).addClass("display-wd");
+        }else{
+            $(this).removeClass("display-wd");
+        }
+       });
+
+    });
+
+});
+
+
 
 /* reservation date */
 $("#date_debut_reservation").focusout(function(){
@@ -238,3 +288,4 @@ function diffDays(d1,d2){
    return Math.round(Math.abs(days));
 }
 
+ 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+ 
 @section('carousel-section')
 @php
 	$str ="";
@@ -55,6 +55,7 @@
 	}
 
 </style>
+ 
 <!-- Carousel
                 ================================================== -->
 <div id="myCarousel" class="carousel slide hero" data-ride="carousel">
@@ -116,7 +117,273 @@
 @endsection
 
 @section('content')
-<div class="container mx-container-1">
+<div class="filter-full-width-wrapper">
+
+<form action="{{route('immo.filter')}}" method="post" name="formfilter"> 
+												   @csrf
+				
+					<div class="filter-full-primary">
+					
+						<div class="container">
+					
+							<div class="filter-full-primary-inner">
+							
+								<div class="form-holder">
+								
+									<div class="row">
+									
+										<div class="col-xs-12 col-sm-12 col-md-6">
+										
+											<div class="filter-item bb-sm no-bb-xss">
+											
+												<div class="input-group input-group-addon-icon no-border no-br-sm">
+													<span class="input-group-addon input-group-addon-icon bg-white"><label><i class="fa fa-map-marker"></i> Ville:</label></span>
+													<input type="text" class="form-control" id="autocompleteTagging" value="Marrakech" placeholder="" readonly/>
+												</div>
+											
+											</div>
+											
+										</div>
+
+										<div class="col-xs-12 col-sm-12 col-md-6">
+										
+											<div class="filter-item-wrapper">
+											  
+												<div class="row">
+													
+													<div class="col-xss-12 col-xs-6 col-sm-5">
+											
+														<div class="filter-item mmr">
+														
+															<div class="input-group input-group-addon-icon no-border no-br-xs">
+																<span class="input-group-addon input-group-addon-icon bg-white">
+																<label class="block-xs"><i class="fa fa-sort-amount-asc"></i> Sort by:</label></span>
+																<select class="selectpicker form-control block-xs">
+																	<option value="0"> Price</option>
+																	<option value="3"> Name</option>
+																	<option value="4"> User Rating</option>
+																	<option value="7"> Star Rating</option>
+																</select>
+															</div>
+														
+														</div>
+														
+													</div>
+											
+													<div class="col-xss-12 col-xs-6 col-sm-7">
+													
+														<div class="filter-item mmr">
+														
+															<div class="input-group input-group-addon-icon no-border no-br-xs">
+																<span class="input-group-addon input-group-addon-icon bg-white"><label><i class="fa fa-sort-amount-asc"></i> {{__('Trier')}}:</label></span>
+																<select name="type"  class="selectpicker form-control "
+																 id="filterCat" data-live-search="true" data-selected-text-format="count > 2" 
+																  data-done-button-text="OK"  data-done-button="true"
+																   data-none-selected-text="{{__('Tous les catégories')}}" >
+																@if(isset($types))
+																
+																@foreach($types as $type)
+															 
+										                <option value="{{ $type->lib}}"> {{ $type->lib}}   </option> 
+																	
+																@endforeach
+																@endif	
+																
+																</select>
+															</div>
+														
+														</div>
+														
+													</div>
+													
+ 												</div>
+											
+											</div>
+											 
+										</div>
+
+									</div>
+								
+								</div>
+								
+								<div class="btn-holder">
+									<span class="btn btn-toggle btn-refine collapsed" data-toggle="collapse" data-target="#refine-result">Advance Filter</span>
+								</div>
+							
+							</div>
+							 
+						</div>
+					 
+ 						 <!-- <button type="submit" class="btn btn-primary">Ok</button> -->
+					</div>
+ 
+					<div class="filter-full-secondary">
+						
+						<div id="refine-result" class="collapse">
+						
+							<div class="container"> 
+						
+								<div class="collapse-inner clearfix">
+								
+									<div class="row">
+									
+										<div class="col-xs-12 col-sm-12 col-md-8">
+										
+											<div class="row">
+											
+												<div class="col-xss-12 col-xs-6 col-sm-6">
+													<div class="form-group">
+														<label>Input Form</label>
+														<input type="text" class="form-control" placeholder="Placeholder">
+													</div>
+												</div>
+												
+												<div class="col-xss-12 col-xs-6 col-sm-6">
+													<div class="form-group">
+														<label>No. of traveller</label>
+														<div class="form-group form-spin-group">
+															<input type="text" class="form-control form-spin" value="1" /> 
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-xss-12 col-xs-6 col-sm-6">
+													<div class="form-group">
+														<label>Select</label>
+														<select class="selectpicker show-tick form-control" title="Select placeholder">
+															<option value="0">Select Option 1</option>
+															<option value="1">Select Option 2</option>
+															<option value="2">Select Option 3</option>
+															<option value="3">Select Option 4</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="col-xss-12 col-xs-6 col-sm-6">
+												
+													<div class="form-group">
+														<label>Select Multiply</label>
+														<select id="filter_image_type" class="selectpicker show-tick form-control" title="Select placeholder" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" multiple>
+															<option value="0">Select Option 1</option>
+															<option value="1">Select Option 2</option>
+															<option value="2">Select Option 3</option>
+															<option value="3">Select Option 4</option>
+														</select>
+													</div>
+
+												</div>
+											
+											</div>
+										
+										</div>
+										
+										<div class="col-xs-12 col-sm-12 col-md-4">
+										
+											<div class="row">
+											
+												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-12">
+												
+													<div class="form-group">
+														<label>Range Slider</label>
+														<div class="sidebar-module-inner">
+															<input id="price_range" />
+														</div>
+													</div>
+													
+												</div>
+												
+												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-12">
+												
+													<div class="form-group">
+														<label>Range Slider</label>
+														<div class="sidebar-module-inner">
+															<input id="star_range" />
+														</div>
+													</div>
+													
+												</div>
+												
+											</div>
+											
+										</div>
+
+										<div class="col-xs-12 col-sm-12 mb-10">
+										
+											<div class="bb mb-20"></div>
+											
+											<label>Checkbox</label>
+											<div class="row checkbox-wrapper">
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-1" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-1">Checkbox One</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-2" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-2">Checkbox Two</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-3" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-3">Checkbox Three</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-4" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-4">Checkbox Four</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-5" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-5">Checkbox Five</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-6" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-6">Checkbox Six</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-7" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-7">Checkbox Seven</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-8" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-8">Checkbox Eight</label>
+													</div>
+												</div>
+												<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
+													<div class="checkbox-block">
+														<input id="filter_checkbox-9" name="filter_checkbox" type="checkbox" class="checkbox"/>
+														<label class="" for="filter_checkbox-9">Checkbox Nine</label>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									
+								</div>
+							
+							</div>
+						
+						</div>
+						
+					</div>
+ 
+				</form>
+				
+			</div>
+			<div class="container mx-container-1">
 
 	<div class="hero-mx-srch">
 		<div class="container">
@@ -166,7 +433,8 @@
 											<img src="/storage/{{ $immo->pic_src }}" alt="images" />
 										</div>
 									</a>
-
+									 
+<input type="hidden" class="hidden-meri-filter-cat" value="{{ $immo->lib }}">
 									<div class="trip-guide-content mx-trip-guide-content" style="margin-bottom: 20px;">
 										<h3 class="hi">{{ $immo->designation }}</h3><br>
 									</div>
@@ -249,7 +517,7 @@
 								@endphp
 								@if($cm == 1 or $counter == 1)
 								@if($counter == 1)
-								<li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
+							<li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
 								@else
 								<li data-id="page-li" id-pg="{{ $counter_nbr }}"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
 								@endif
@@ -275,4 +543,6 @@
 
 	</div>
 </div>
+<script></script>
+<!--   -->
 @endsection

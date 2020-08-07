@@ -18,24 +18,24 @@
 	<link rel="shortcut icon" href="{{ asset('/') }}images/ico/logo-zh-tours.png">
 
 	<!-- CSS Plugins -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}bootstrap/css/bootstrap.min.css" media="screen">
-	<link href="{{ asset('/') }}css/main.css" rel="stylesheet">
-	<link href="{{ asset('/') }}css/plugin.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url('bootstrap/css/bootstrap.min.css')}} " media="screen">
+	<link href="{{ url('css/main.css') }} " rel="stylesheet">
+	<link href="{{ url('css/plugin.css') }} " rel="stylesheet">
 
 	<!-- CSS Custom -->
-	<link href="{{ asset('/') }}css/style.css" rel="stylesheet">
+	<link href="{{ url('css/style.css') }} " rel="stylesheet">
 
 	<!-- Add your style -->
-	<link href="{{ asset('/') }}css/your-style.css" rel="stylesheet">
+	<link href="{{ url('css/your-style.css') }}" rel="stylesheet">
 
 	<!-- AOS libs -->
-	<link href="{{ asset('/') }}dist/aos.css" rel="stylesheet">
+	<link href="{{ url('dist/aos.css') }} " rel="stylesheet">
 
 	<!-- FontAwesome Style File -->
-	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">{{-- 
+	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">
 	<link href="{{ asset('/') }}myIcons/css/fontawesome.css" rel="stylesheet">
   <link href="{{ asset('/') }}myIcons/css/brands.css" rel="stylesheet">
-  <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet"> --}}
+  <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet"> 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -78,7 +78,8 @@
 							<li>
 								<a href="#">Immobilier</a>
 								<ul>
-									<li><a href="{{ route('immobilier_vente.index') }}">Immobilier Vente</a>
+									
+									<li><a href="{{ route('immobilier_vente.index') }}">Immobilier Vente/Achat</a>
 									</li>
 									<li><a href="{{ route('immobilier_loc.index') }}">Immobilier Location</a>
 
@@ -211,15 +212,12 @@
 
 
 	<!-- Core JS -->
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/core-plugins.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/customs.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/mx.js"></script>
+	<script type="text/javascript" src="{{ url('js/jquery.min.js') }} "></script>
+	<script type="text/javascript" src="{{ url('js/core-plugins.js') }} "></script>
+	<script type="text/javascript" src="{{ url('js/customs.js') }} "></script>
+	<script type="text/javascript" src="{{ url('js/mx.js') }} "></script>
 
-	<!-- Only in Home Page -->
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.flexdatalist.js"></script>
-
+	 
 	@yield('script-details-car')
 
 
