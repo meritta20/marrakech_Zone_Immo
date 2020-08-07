@@ -39,7 +39,6 @@ Route::get('/reservationDoneimmol/{immobilier}', 'ReservationLocationController@
 Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@done')->name('immov.done'); */
 
 /*
- 
 
 //routes just for testing images
 Route::post('/mytest', 'TestController@edit') ;
@@ -63,19 +62,30 @@ Route::get('/settings_done', 'AdminController@done')->name('admin.settings.done'
 Route::post('/resets', 'AdminController@reset')->name('admin.password_reset');
 
 Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile');
- 
 
 
 
-Route::get('/admin/car', 'CarController@create')->name('car.create');
-Route::post('/scar', 'CarController@store')->name('car.store');
 
-Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
-Route::post('/shomecarasoul', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
 
-Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
-Route::post('/shomesections', 'HomeController@storeSections')->name('homeSections.store');
- 
-  
+
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+Route::get('/admin/car/create', 'CarController@create')->name('car.create');
+Route::post('/scar', 'CarController@store')->name('car.store');
+
+Route::get('/admin/car/edit/{car}', 'CarController@edit')->name('car.edit');
+Route::post('/scaredit/{car}', 'CarController@storeEdit')->name('car.storeEdit');
+
+Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar.index');
+
+Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
+
+Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
+Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
+
+Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
+Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');
