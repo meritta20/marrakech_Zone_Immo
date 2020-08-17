@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
+<script>
 
+</script>
 <script>
     // Select your input element.
     var number = document.getElementsByClassName('.meri-number');
@@ -31,24 +33,23 @@
     </div>
 
     <div class="section-body">
-        <h2 class="section-title">Créer un nouveau immobilier</h2>
+        <h2 class="section-title">Modifier votre immobiler : {{$immobilier->designation}} </h2>
         <p class="section-lead">
-            Dans cette page vous pouvez créer votre immobilier en remplissant les champs suivants. </p>
+            Dans cette page vous pouvez faire la mise à jour de  votre immobilier en changeant les champs suivants. </p>
 
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Insérer votre immobilier</h4>
+                        <h4>Mettre à jour votre immobilier</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{route('immobilier.create')}}" enctype="multipart/form-data">
-
-                            @csrf
-                            <div class="form-group row mb-4">
+                    <form action="{{route('admin.immobilier.update',['immobilier'=>$immobilier->id])}}" enctype="multipart/form-data" method="POST">
+ @csrf
+       <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Catégorie</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <select class="form-control selectric" name="mycategorie" required>
+                                    <select class="form-control selectric" name="mycategorie" >
                                         <option value="3">Immobilier pour vente</option>
                                         <option value="1">Immobilier pour location</option>
                                     </select>
@@ -82,7 +83,7 @@
                                                 $("#type_sub").prop("hidden", true);
                                             }
                                             $("#type_sub").val($("#mytype").val());
-                                            if(selectVal=="Terrain"){
+                                          if(selectVal=="Terrain"){
                                             document.getElementById("nbr_chbr").disabled = true;
                                              document.getElementById("nbr_chbr").value="null";
 
@@ -113,10 +114,10 @@
                                             document.getElementById("date_sep").value="null";
    
                                           }
-
                                         // alert('hello');
 
                                         }
+
                                     </script>
 
                                 </div>
@@ -126,7 +127,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Désignation</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" required>
+                                    <input type="text" class="form-control @error('designation') is-invalid @enderror" value="{{$immobilier->designation}}" name="designation" >
                                     @error('designation')
                                                 <span class="invalid-feedback-mx" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -138,14 +139,14 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Patente</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control" name="patente" required>
+                                    <input type="text" class="form-control" name="patente" value="{{$immobilier->patente}}" >
                                 </div>
                             </div>
 
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Superficie (en m²) </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" min="0" class="form-control" name="superficie" required>
+                                    <input type="number" min="0" class="form-control" name="superficie" value="{{$immobilier->superfecie}}" >
                                     @if(isset($msgErr2))
                                                 <span class="invalid-feedback-mx" role="alert">
                                                     <strong>{{ $msgErr }}</strong>
@@ -157,7 +158,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date séparateur en (jours) </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" min="0"  class="form-control" name="date_sep" id="date_sep" required>
+                                    <input type="number" min="0" id="date_sep" class="form-control" value="{{$immobilier->date_sep}}" name="date_sep" >
                                 </div>
                             </div>
 
@@ -165,7 +166,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Adresse</label>
                                 <div class="col-sm-12 col-md-7">
-                                <textarea class="form-control" required name="adresse"></textarea>
+                                <textarea class="form-control" name="adresse"   placeholder="{{ $adresse }}">{{ $adresse }}</textarea>
 
                                  </div>
                             </div>
@@ -174,11 +175,11 @@
                       
                             <div class="form-inline form-group row mb-4">
                                 <label class=" col-form-label text-md-right col-12 col-md-3 col-lg-3" for="inlineFormInputName2">Nombre d'étage</label>
-                                <input type="number" min="0" class="meri-number form-control mb-2 mr-sm-2" style="padding-left:15px !important;" id="nbr_etg" placeholder="1,2,3..." name="nbr_etage">
+                                <input type="number" min="0" class="meri-number form-control mb-2 mr-sm-2" value="{{$immobilier->nbr_etage}}" style="padding-left:15px !important;" id="nbr_etg" placeholder="1,2,3..." name="nbr_etage">
 
                                 <label class="col-6 col-md-3 col-lg-3" for="inlineFormInputGroupUsername2">Nombre de chambre</label>
                                 <div class="input-group mb-2 mr-sm-2">
-                                    <input type="number" min="0" class="meri-number form-control" name="nbr_chbr" id="nbr_chbr" placeholder="1,2,3..." required>
+                                    <input type="number" min="0" class="meri-number form-control" name="nbr_chbr" value="{{$immobilier->nbr_chambre}}" id="nbr_chbr" placeholder="1,2,3..." >
                                 </div>
                             </div>
 
@@ -186,7 +187,7 @@
                         <!-- <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Patente</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="number" min="0" class="form-control" name="patente" required>
+                                    <input type="number" min="0" class="form-control" name="patente" >
                                 </div>
                             </div> -->
 
@@ -194,12 +195,12 @@
                         <div class="form-inline form-group row mb-4">
                                 <label class=" col-form-label text-md-right col-12 col-md-3 col-lg-3" for="inlineFormInputName2">Prix Min ( en $)</label>
 
-                                <input type="number" min="0" class="meri-number form-control mb-2 mr-sm-2" name="prix_min" id="prix_min" required>
+                                <input type="number" min="0" class="meri-number form-control mb-2 mr-sm-2" value="{{$immobilier->price_min}}" name="prix_min" id="prix_min" >
 
                                 <label class="col-6 col-md-3 col-lg-3" for="inlineFormInputGroupUsername2">Prix Max ( en $)</label>
                                 <div class="input-group mb-2 mr-sm-2">
 
-                                    <input type="number" min="0" class=" meri-number form-control" name="prix_max" id="prix_max" required>
+                                    <input type="number" min="0" class=" meri-number form-control" value="{{$immobilier->price_max}}"  name="prix_max" id="inlineFormInputGroupUsername2" >
                                     
                                     @if(isset($msgErr1))
                                                 <span class="invalid-feedback-mx" role="alert">
@@ -214,18 +215,94 @@
                                 <div class="col-sm-12 col-md-7">
                                     <div id="image-preview" class="image-preview mx-image-preview">
                                         <label for="image-upload" id="image-label">Choisir une image</label>
-                                        <input class="@error('image_src') is-invalid @enderror" type="file" name="image_src" id="image-upload" required/>
+                                        <input class="@error('image_src') is-invalid @enderror" type="file" name="image_src" value="storage/{{$immobilier->pic_src}}" id="image-upload" />
                                         @error('image_src')
                                                 <span class="invalid-feedback-mx" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+                                            <img id="img_top" src="/storage/{{ $immobilier->pic_src }}" alt="img">
+
                                     </div> 
                                 </div>
                             </div>
-
+@if(isset($gallery))
                            <!--  start images secondaire -->
                            <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">{{ __('images secondaire 1') }}</label>
+                                        <div class="col-sm-12 col-md-7">
+                                          <div id="image-preview_1" class="image-preview mx-image-preview">
+                                            <label for="image-upload_1" id="image-label_1">Image ici</label>
+                                            <input id="image-upload_1" type="file" class=" @error('img_1') is-invalid @enderror" name="img_1" value="{{ $gallery->first_img }}"  autocomplete="img_1">
+
+                                            @error('img_1')
+                                                <span class="invalid-feedback-mx" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <img id="img_top_1" src="/storage/{{ $gallery->first_img }}" alt="img" >
+
+                                          </div>
+                                        </div>
+                                    </div>
+                 
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">{{ __('images secondaire 2') }}</label>
+                                        <div class="col-sm-12 col-md-7">
+                                          <div id="image-preview_2" class="image-preview mx-image-preview">
+                                            <label for="image-upload_2" id="image-label_2">Image ici</label>
+                                            <input id="image-upload_2" type="file" class=" @error('img_2') is-invalid @enderror" name="img_2" value="{{ $gallery->sec_img }}"  autocomplete="img_2">
+
+                                            @error('img_2')
+                                                <span class="invalid-feedback-mx" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <img id="img_top_2" src="/storage/{{  $gallery->sec_img  }}" alt="img">
+
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">{{ __('images secondaire 3') }}</label>
+                                        <div class="col-sm-12 col-md-7">
+                                          <div id="image-preview_3" class="image-preview mx-image-preview">
+                                            <label for="image-upload_3" id="image-label_3">Image ici</label>
+                                            <input id="image-upload_3" type="file" class=" @error('img_3') is-invalid @enderror" name="img_3" value="{{ $gallery->third_img }}"  autocomplete="img_3">
+
+                                            @error('img_3')
+                                                <span class="invalid-feedback-mx" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <img id="img_top_3" src="/storage/{{ $gallery->third_img  }}" alt="img">
+
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">{{ __('images secondaire 4') }}</label>
+                                        <div class="col-sm-12 col-md-7">
+                                          <div id="image-preview_4" class="image-preview mx-image-preview">
+                                            <label for="image-upload_4" id="image-label_4">Image ici</label>
+                                            <input id="image-upload_4" type="file" class=" @error('img_4') is-invalid @enderror" name="img_4" value="{{ $gallery->fourth_img }}"  autocomplete="img_4">
+
+                                            @error('img_4')
+                                                <span class="invalid-feedback-mx" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <img id="img_top_4" src="/storage/{{ $gallery->fourth_img }}" alt="img">
+
+                                          </div>
+                                        </div>
+                                    </div>
+                           <!-- end images secondaire -->
+@else
+    <!--  start images secondaire -->
+    <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">{{ __('images secondaire 1') }}</label>
                                         <div class="col-sm-12 col-md-7">
                                           <div id="image-preview_1" class="image-preview mx-image-preview">
@@ -237,6 +314,7 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+ 
                                           </div>
                                         </div>
                                     </div>
@@ -253,6 +331,7 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+ 
                                           </div>
                                         </div>
                                     </div>
@@ -269,6 +348,7 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+ 
                                           </div>
                                         </div>
                                     </div>
@@ -285,18 +365,21 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+ 
                                           </div>
                                         </div>
                                     </div>
                            <!-- end images secondaire -->
 
 
-                            <button class="btn btn-primary" name="swal3" id="swal-3" style="display: none;">Launch</button>
+                  
+                            @endif
+                           <button class="btn btn-primary" name="swal3" id="swal-3" style="display: none;">Launch</button>
 
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                 <div class="col-sm-12 col-md-7">
-                                    <button type="submit" class="btn btn-primary">Créer cet immobilier</button>
+                                    <button type="submit" class="btn btn-primary">Modifier</button>
                                 </div>
                             </div>
                     </div>

@@ -73,8 +73,8 @@
   -->
 			<div class="carousel-caption">
 			<h1><span><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star "
-			 style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i></span> <br>Voitures </h1>
-				<p>Garantir la meilleure qualité des voitures est notre plaisir </p>
+			 style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i></span> <br>{{__('Voitures')}} </h1>
+				<p>{{__("Garantir la meilleure qualité des voitures est notre plaisir")}} </p>
 
 			</div>
 
@@ -85,15 +85,15 @@
 			<div class="carousel-caption">
 			<h1><span><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" >
 		</i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i>
-	</span> <br>Villas
+	</span> <br>{{__("Villas")}}
 
-<p> Trouvez votre place avec une expérience photo immersive </p>
+<p> {{__("Trouvez votre place avec une expérience photo immersive")}} </p>
 
 
 			</div>
 		</div>
 		<div class="item three d-block w-100">
-			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
+			<!-- <img class="third-slide" src="{{ asset("/") }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
 			<h1><span><i class="fas fa-star " style="font-size:4vw"
@@ -101,30 +101,30 @@
 			></i><i class="fas fa-star " style="font-size:4vw"
 			></i><i class="fas fa-star " style="font-size:4vw"
 			></i><i class="fas fa-star " style="font-size:4vw"
-			></i> </span> <br>Transport Touristique</h1>
-				<p>Le confort et la sécurité que vous ne trouverez nulle part ailleurs </p>
+			></i> </span> <br>{{__("Transport Touristique")}}</h1>
+				<p>{{__("Le confort et la sécurité que vous ne trouverez nulle part ailleurs")}} </p>
 
 			</div>
 		</div>
 		<div class="item four d-block w-100">
-			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
+			<!-- <img class="third-slide" src="{{ asset("/") }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
 			<h1><span><i class="fas fa-star " style="font-size:4vw"
-			></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i> </span> <br>Appartements </h1>
+			></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i> </span> <br>{{__("Appartements")}} </h1>
 
-				<p>Nous vous aidons à trouvez l'appartement que vous aimerez</p>
+				<p>{{__("Nous vous aidons à trouvez l'appartement que vous aimerez")}}</p>
 
 			</div>
 		</div>
 	</div>
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
+		<span class="sr-only">{{__("Précédent")}}</span>
 	</a>
 	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
+		<span class="sr-only">{{__("Suivant")}}</span>
 	</a>
 </div>
 <!-- /.carousel -->
@@ -153,8 +153,8 @@
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"> <i class="ri ri-user"></i></div>
 						<div class="content text-center">
-							<h6 style="color:#F07D37">Besoin d'un chauffeur qui vous guide?</h6>
-							<span>Nous somme ici pour vous aider.</span>
+							<h6 style="color:#F07D37">{{__("Besoin d'un chauffeur qui vous guide?")}}</h6>
+							<span>{{__('Nous somme ici pour vous aider.')}}</span>
 						</div>
 					</div>
 				</div>
@@ -162,8 +162,8 @@
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"><i class="ri ri-location"></i></div>
 						<div class="content text-center">
-							<h6 style="color:#F07D37">Vous cherchez un appartement luxieux avec un prix convenable?</h6>
-							<span>Notre entreprise vous offre une collection riche avec les options que vous désirez.</span>
+							<h6 style="color:#F07D37">{{__('Vous cherchez un appartement luxieux avec un prix convenable?')}}</h6>
+							<span>{{__('Notre entreprise vous offre une collection riche avec les options que vous désirez.')}}</span>
 						</div>
 					</div>
 				</div>
@@ -174,8 +174,8 @@
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"> <i class="ri ri-equal-circle"></i></div>
 						<div class="content text-center">
-							<h6 style="color:#F07D37">Besoin d'une voiture luxe pour une longue durée?</h6>
-							<span>Vous êtes dans la meilleures voie.,
+							<h6 style="color:#F07D37">{{__("Besoin d'une voiture luxe pour une longue durée?")}}</h6>
+							<span>{{__("Vous êtes dans la meilleures voie.")}}
                              </span>
 						</div>
 					</div>
@@ -192,10 +192,12 @@
 @php
 	$str ="";
 @endphp
+@if(isset($home_sections))
 @if($home_sections[0]->id == 2)
 	@php
 		$str ="/storage/";
 	@endphp
+@endif
 @endif
     <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('{{ $str }}{{ $home_sections[0]->first_img }}')">
 
@@ -207,14 +209,13 @@
 
                     <div class="col-sm-8  col-md-6 ">
                         <div class="caption-mx-1" data-aos="zoom-out-left">
-                        <h2 class="txt1">VOITURES DE LUXE ET TRANSPORT TOURISTIQUE</h2>
-                        <p class="txt2">Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur
-                            Avec des services de transport touristique </p>
+                        <h2 class="txt1">{{__("VOITURES DE LUXE ET TRANSPORT TOURISTIQUE")}}</h2>
+                        <p class="txt2">{{__("Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur Avec des services de transport touristique")}} </p>
 
                         </div>
 
                     <a  href="#">
-                        DÉCOUVRIR MAINTENANT
+                        {{__("DÉCOUVRIR MAINTENANT")}}
                     </a>
                     </div>
                 </div>
@@ -235,14 +236,14 @@
 
                     <div class="col-sm-8  col-md-6 ">
                         <div class="caption-mx-1" data-aos="zoom-out-left">
-                        <h2 class="txt1 ">IMMOBILIERS DE LUXE ET DE QUALITÉ</h2>
-                        <p class="txt2">Nous vous proposons des immobiliers de luxe à vendre ou à louer
+                        <h2 class="txt1 ">{{__("IMMOBILIERS DE LUXE ET DE QUALITÉ")}}</h2>
+                        <p class="txt2">{{__("Nous vous proposons des immobiliers de luxe à vendre ou à louer")}}
                             </p>
 
                         </div>
 
                     <a  href="#">
-                        DÉCOUVRIR MAINTENANT
+                        {{__("DÉCOUVRIR MAINTENANT")}}
                     </a>
                     </div>
                 </div>
@@ -264,21 +265,21 @@
 
                     <h2 class="text-center" ><span><i class="fas fa-star " style="font-size:4vw;color:orangered" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw;color:orangered" >
 		</i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw;color:orangered" ></i>
-	</span> <br>Les Meilleurs immobiliers pour  votre confort</h2>
+	</span> <br>{{__("Les Meilleurs immobiliers pour  votre confort")}}</h2>
 
             </div>
         </div>
     </div>
 	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
-
+@if(count($myQueri)==5)
     <div class="grid-container">
         <div class="big-item">
             <img src="/storage/{{$myQueri[0]->pic_src}}" alt="images" />
             <div class="caption">
                 <h1>{{$myQueri[0]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[0]->id])}}">
-                DETAILS
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[0]->id])}}">
+               {{__("DETAILS")}}
             </a>
         </div>
 
@@ -288,8 +289,8 @@
             <div class="caption">
                 <h1>{{$myQueri[1]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[1]->id])}}">
-                DETAILS
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[1]->id])}}">
+                {{__("DETAILS")}}
             </a>
         </div>
         <div class="item2">
@@ -298,8 +299,8 @@
             <div class="caption">
                 <h1>{{$myQueri[2]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[2]->id])}}">
-                DETAILS
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[2]->id])}}">
+			{{__("DETAILS")}}
             </a>
         </div>
         <div class="item3">
@@ -308,8 +309,8 @@
             <div class="caption">
                 <h1>{{$myQueri[3]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[3]->id])}}">
-                DETAILS
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[3]->id])}}">
+			{{__("DETAILS")}}
             </a>
         </div>
         <div class="item4">
@@ -318,10 +319,11 @@
             <div class="caption">
                 <h1>{{$myQueri[4]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[4]->id])}}">
-                DETAILS
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[4]->id])}}">
+			{{__("DETAILS")}}
             </a>
                 </div>
-    </div>
+	</div>
+	@endif
 </div>
 @endsection

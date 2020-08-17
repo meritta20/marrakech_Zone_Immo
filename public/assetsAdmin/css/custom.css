@@ -112,4 +112,18 @@
 .mx-image-preview img{
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
 }
+=======
+}
+
+/**/
+.display-wd{
+  display: none !important;
+}
+
+.mx-flex-right{
+  display: flex;
+    justify-content: flex-end
+}
+>>>>>>> 512121a7076de205ccca18f94cedb32c9c2bd09e

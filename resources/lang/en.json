@@ -1,0 +1,108 @@
+{
+    "/start/layouts/app": "" ,
+
+    "Accueil": "Home" ,
+    "Immobilier": "Real Estate" ,
+    "Immobilier Vente":"Real Estate Sale",
+    "Immobilier Location": "Real Estate Rental" ,
+    "Voitures de luxe":"Luxury cars" ,
+    "Transport touristique": "Tourist transport" ,
+
+    "/end/layouts/app": "" ,
+
+
+    "/start/welcome": "" ,
+
+    "Voitures": "Cars" ,
+    "Garantir la meilleure qualité des voitures est notre plaisir": "Guaranteeing the best quality of cars is our pleasure" ,
+    "Villas": "Villas" ,
+    "Trouvez votre place avec une expérience photo immersive": "Find your place with an immersive photo experience" ,
+    "Transport Touristique": "Tourist Transport" ,
+    "Le confort et la sécurité que vous ne trouverez nulle part ailleurs": "The comfort and security you won't find anywhere else" ,
+    "Appartements": "Apartments" ,
+    "Nous vous aidons à trouvez l'appartement que vous aimerez":   "We help you find the apartment you will like" ,
+    "Besoin d'un chauffeur qui vous guide?": "Need a driver to guide you?",
+    "Nous somme ici pour vous aider.":  "We are here to help you." ,
+    "Vous cherchez un appartement luxieux avec un prix convenable?": "Are you looking for a luxury apartment with a decent price?",
+    "Notre entreprise vous offre une collection riche avec les options que vous désirez.":"Our company offers you a rich collection with the options you desire." ,
+    "Besoin d'une voiture luxe pour une longue durée?":     "Need a luxury car for a long time?" ,
+    "Vous êtes dans la meilleures voie.":"You are in the best place.",
+    "VOITURES DE LUXE ET TRANSPORT TOURISTIQUE":  "LUXURY CARS AND TOURIST TRANSPORTATION" ,
+    "Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur Avec des services de transport touristique": "We offer a large luxury car park with or without driver With tourist transport services",
+    "Nous vous proposons des immobiliers de luxe à vendre ou à louer": "LUXURY AND QUALITY REAL ESTATE" ,
+    "DÉCOUVRIR MAINTENANT": "DISCOVER NOW" ,
+    "Les Meilleurs immobiliers pour  votre confort": "The best real estate for your comfort" ,
+    "DETAILS":  "DETAILS" ,
+    "Suivant":"Next",
+    "Précédent":"Previous",
+    "/end/welcome": "" ,
+
+
+    "start/cars/index": "" ,
+
+    "Acces rapide!trouvez ici votre preferable voiture facilement":   "Quick access! Find your favorite car here easily" ,
+    "Afficher touts":     "Show all" ,
+    "Couleur":   "Color",
+    "charge maximale":   "maximum charge" ,
+    "Á partir de":  "From" ,
+    "plus de":  "more than" ,
+    "marques de voitures à choisir":   "car brands to choose" ,
+    "Pas de resultat à afficher pour cette recherche!": "No results to display for this search!",
+
+
+    "end/cars/index": "" ,
+
+
+    "start/immobiliers/immo_location": "" ,
+
+    "Acces rapide!trouvez ici votre preferable immobilier facilement": "Quick access! Find your favorite real estate here easily" ,
+    "Nombre d'étage":  "Number of floors" ,
+    "Nombre de chambre": "Room number" ,
+    "type d'immobiliers à choisir":  "type of real estate to choose" ,
+
+    "end/immobiliers/immo_location": "" ,
+
+
+    "start/immobiliers/immo_vente": "" ,
+
+    
+
+    "end/immobiliers/immo_vente": "" ,
+    
+   
+    "start/cars/details": "" ,
+
+    "Les meilleurs voitures à choisir": "The best cars to choose",
+    "Prix pour plus de": "Price for more than",
+    "Prix pour moins de":  "Price for less than",
+    "JOURS":"DAYS",
+    "jour":  "day",
+    "nombre de places":  "number of places",
+    "Numero immatriculation": "Registration number",
+    "kilometrage":"mileage",
+    "Plus d'images": "More pictures",
+    "Reserver maintenant": "Reserve now",
+    "cliquer pour afficher l image en plein ecran": "click to display the image in full screen",
+    "IMAGE 1": "PICTURE 1",
+    "IMAGE 2": "PICTURE 2",
+    "IMAGE 3": "PICTURE 3",
+    "IMAGE 4": "PICTURE 4",
+
+    "end/cars/details": "" ,
+
+
+    "start/immobiliers/details": "" ,
+
+    "Les meilleurs immobiliers à choisir":  "The best properties to choose",
+    "PRIX minimale":  "Minimum PRICE",
+    "PRIX maximale": "Maximum PRICE",
+    "nombre d'étages":  "number of floors",
+    "nombre de chambres":  "number of rooms",
+    "étages":  "floors",
+    "Chambres":  "Rooms",
+    "PATENTE": "PATENT",
+    "SUPERFECIE": "AREA",
+
+    "end/immobiliers/details": "" 
+
+}

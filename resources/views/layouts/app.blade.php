@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<!-- Title Of Site -->
+	<!-- Title Of Site -->
 	<title>Marrakech Zone Immo</title>
 	<meta name="description" content="HTML template for multiple tour agency, local agency, traveller, tour hosting based on Twitter Bootstrap 3.x.x" />
 	<meta name="keywords" content="tour agency, tour guide, travel, trip, holiday, vocation, relax, adventure, virtual tour, tour planner" />
@@ -32,15 +32,16 @@
 	<link href="{{ url('dist/aos.css') }} " rel="stylesheet">
 
 	<!-- FontAwesome Style File -->
-	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">
+	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">{{--
 	<link href="{{ asset('/') }}myIcons/css/fontawesome.css" rel="stylesheet">
-  <link href="{{ asset('/') }}myIcons/css/brands.css" rel="stylesheet">
-  <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet"> 
+	<link href="{{ asset('/') }}myIcons/css/brands.css" rel="stylesheet">
+	<link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet"> --}}
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+    <![endif]-->
+	@yield('css-up')
 
 </head>
 
@@ -72,53 +73,81 @@
 						<ul class="nav navbar-nav" id="responsive-menu">
 
 							<li>
-								<a href="{{ asset('/') }}">Accueil</a>
+								<a href="{{ asset('/') }}">{{__('Accueil')}}</a>
+							</li>
+
+							@php 
+							$types=DB::select("select distinct lib,id_type,categorie from type_immobiliers,immobiliers where
+							immobiliers.id_type=type_immobiliers.id and categorie='3'");
+							@endphp
+							<li><a href="#">{{__('Immobilier Vente')}}</a>
+							
+							 
+							@if(count($types)>0)
+							<ul>
+							@foreach($types as $type)
+							<li><a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> $type->categorie,'type'=> $type->id_type])}}">{{ $type->lib }}</a> </li>
+							@endforeach
+							@endif
+							</ul>
+						</li>
+							<li><a href="#">{{__('Immobilier Location')}}</a>
+						 
+							@php 
+							$types1=DB::select("select distinct lib,id_type,categorie from type_immobiliers,immobiliers where
+							immobiliers.id_type=type_immobiliers.id and categorie='2'");
+							@endphp
+							@if(count($types1)>0)
+							<ul>
+							@foreach($types1 as $type)
+							<li><a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> $type->categorie,'type'=> $type->id_type])}}">{{ $type->lib }}</a> </li>
+							@endforeach
+							 
+							</ul>
+							@endif
+							</li>
+
+
+							<li>
+								<a href="#">{{__('Véhicules')}} </a>
+								<ul>
+									<li>
+										<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">{{__('Voitures de luxe')}}</a>
+
+									</li>
+
+									<li>
+										<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 2]) }}">{{__('Transport touristique')}}</a>
+
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"> <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
+             height: 37;"></i> Fr</a>
+								<ul>
+									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'ar']) ) }}">{{__('Arabe')}}</a></li>
+									<li class="active"><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'fr']) ) }}" class="active"> {{__('Français')}}</a></li>
+									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'en']) ) }}">{{__('Anglais')}}</a></li>
+
+								</ul>
+
 							</li>
 
 							<li>
-								<a href="#">Immobilier</a>
-								<ul>
-									
-									<li><a href="{{ route('immobilier_vente.index') }}">Immobilier Vente/Achat</a>
-									</li>
-									<li><a href="{{ route('immobilier_loc.index') }}">Immobilier Location</a>
-
-									</li>
-							</li>
-						</ul>
-						</li>
-
-						<li>
-							<a href="{{ route('car.index',['categorie' => 1]) }}">Voitures de luxe</a>
-
-						</li>
-
-						<li>
-							<a href="{{ route('car.index',['categorie' => 2]) }}">Transport touristique</a>
-
-						</li>
-						<li>
-							<a href="#" > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
-             height: 37;"></i> Fr</a>
-								<ul>
-									<li><a href="#">Arabe</a></li>
-									<li class="active"><a href="#" class="active"> Français</a></li>
-									<li><a href="#">Anglais</a></li>
-
-								</ul>
-
-						</li>
-
-						<li>
-							<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
+								<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
     height: 40;
-"></i>  </em></a>
+"></i> </em></a>
+								@php
+								$info=DB::table('infos')->where('id',1)->get();
+								@endphp
 								<ul>
-									<li><a>Tel : +212524808080</a></li>
-									<li >    <i class="fab fa-whatsapp" style="display:inline-block;    PADDING-LEFT: 20px;"></i> +212625109819 </li>
+									<li><i class="fas fa-at" style="display:inline-block;PADDING-LEFT: 20px;"></i> <span style="font-size: .9vw;">{{ $info[0]->email }}</span></li>
+									<li><i class="fas fa-phone-square-alt" style="display:inline-block;PADDING-LEFT: 20px;"></i>{{$info[0]->tele}}</li>
+									<li><i class="fab fa-whatsapp" style="display:inline-block;PADDING-LEFT: 20px;"></i> {{$info[0]->wp_tele}} </li>
 								</ul>
 
-						</li>
+							</li>
 
 						</ul>
 
@@ -139,15 +168,15 @@
 		<!-- start Main Wrapper -->
 
 
-        <div class="main-wrapper scrollspy-container">
-            @yield('carousel-section')
+		<div class="main-wrapper scrollspy-container">
+			@yield('carousel-section')
 
-		<!-- start our content -->
-        <main class="py-4">
-            @yield('content')
-        </main>
+			<!-- start our content -->
+			<main class="py-4">
+				@yield('content')
+			</main>
 
-        </div>
+		</div>
 		<!-- end our content -->
 
 		<!-- end Main Wrapper -->
@@ -217,7 +246,7 @@
 	<script type="text/javascript" src="{{ url('js/customs.js') }} "></script>
 	<script type="text/javascript" src="{{ url('js/mx.js') }} "></script>
 
-	 
+
 	@yield('script-details-car')
 
 

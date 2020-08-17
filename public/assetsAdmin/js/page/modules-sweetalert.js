@@ -4,7 +4,9 @@ $("#swal-1").click(function() {
 	swal('Hello');
 });
 
- 
+$("#swal-2").click(function() {
+  swal("Succés !", "Votre modification a été bien effectuée!", "success");
+}); 
 $("#swal-3").click(function() {
 	swal('Attention', 'Vous ne pouvez pas sélectionner plus de 4 images !', 'warning');
 });

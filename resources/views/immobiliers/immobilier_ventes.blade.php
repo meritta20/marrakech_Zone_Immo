@@ -119,8 +119,7 @@
 @section('content')
 <div class="filter-full-width-wrapper">
 
-<form action="{{route('immo.filter')}}" method="post" name="formfilter"> 
-												   @csrf
+
 				
 					<div class="filter-full-primary">
 					
@@ -145,62 +144,7 @@
 											
 										</div>
 
-										<div class="col-xs-12 col-sm-12 col-md-6">
-										
-											<div class="filter-item-wrapper">
-											  
-												<div class="row">
-													
-													<div class="col-xss-12 col-xs-6 col-sm-5">
-											
-														<div class="filter-item mmr">
-														
-															<div class="input-group input-group-addon-icon no-border no-br-xs">
-																<span class="input-group-addon input-group-addon-icon bg-white">
-																<label class="block-xs"><i class="fa fa-sort-amount-asc"></i> Sort by:</label></span>
-																<select class="selectpicker form-control block-xs">
-																	<option value="0"> Price</option>
-																	<option value="3"> Name</option>
-																	<option value="4"> User Rating</option>
-																	<option value="7"> Star Rating</option>
-																</select>
-															</div>
-														
-														</div>
-														
-													</div>
-											
-													<div class="col-xss-12 col-xs-6 col-sm-7">
-													
-														<div class="filter-item mmr">
-														
-															<div class="input-group input-group-addon-icon no-border no-br-xs">
-																<span class="input-group-addon input-group-addon-icon bg-white"><label><i class="fa fa-sort-amount-asc"></i> {{__('Trier')}}:</label></span>
-																<select name="type"  class="selectpicker form-control "
-																 id="filterCat" data-live-search="true" data-selected-text-format="count > 2" 
-																  data-done-button-text="OK"  data-done-button="true"
-																   data-none-selected-text="{{__('Tous les catégories')}}" >
-																@if(isset($types))
-																
-																@foreach($types as $type)
-															 
-										                <option value="{{ $type->lib}}"> {{ $type->lib}}   </option> 
-																	
-																@endforeach
-																@endif	
-																
-																</select>
-															</div>
-														
-														</div>
-														
-													</div>
-													
- 												</div>
-											
-											</div>
-											 
-										</div>
+									 
 
 									</div>
 								
@@ -380,7 +324,7 @@
 						
 					</div>
  
-				</form>
+				
 				
 			</div>
 			<div class="container mx-container-1">
@@ -428,14 +372,13 @@
 							<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget {{ $style }}" data-widget="{{ $c_data }}" data-aos="fade-up" data-aos-duration="2000">
 
 								<div class="mx-trip-guide-item trip-guide-item" style="background-color:white">
-									<a href="{{route('immo.show',['immobilier'=>$immo->id])}}">
+									<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}">
 										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="cliquez ici pour plus de details">
 											<img src="/storage/{{ $immo->pic_src }}" alt="images" />
 										</div>
 									</a>
 									 
-<input type="hidden" class="hidden-meri-filter-cat" value="{{ $immo->lib }}">
-									<div class="trip-guide-content mx-trip-guide-content" style="margin-bottom: 20px;">
+ 									<div class="trip-guide-content mx-trip-guide-content" style="margin-bottom: 20px;">
 										<h3 class="hi">{{ $immo->designation }}</h3><br>
 									</div>
 
@@ -460,7 +403,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12 col-sm-6 text-right">
-												<a href="{{route('reservationVente.create',['immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
+												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
 
 											</div>
 										</div>

@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,48 +15,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
-Route::get('/', 'HomeController@index')->name('home');
-
-/* ces routes sont pour le test seulement  */
-Route::get('/cars', 'CarController@index')->name('car.index');
-// Route::get('/details', 'CarController@show')->name('car.show');
-
-/*********** */
-Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
-Route::get('/details/{car}', 'CarController@show')->name('car.show');
-Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
-
-Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
-
-Route::get('/reservationimmol/{immobilier}', 'ReservationLocationController@create')->name('reservationLocation.create');
-Route::post('/rsimmol', 'ReservationLocationController@store')->name('reservationLocation.store');
-
-Route::get('/reservationimmov/{immobilier}', 'ReservationVenteController@create')->name('reservationVente.create');
-Route::post('/rsimmov', 'ReservationVenteController@store')->name('reservationVente.store');
-/*
-Route::get('/reservationDone/{car}', 'ReservationCarController@done')->name('car.done');
-Route::get('/reservationDoneimmol/{immobilier}', 'ReservationLocationController@done')->name('immol.done');
-Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@done')->name('immov.done'); */
-
-/*
-
-//routes just for testing images
-Route::post('/mytest', 'TestController@edit') ;
-Route::get('/test', function(){
-    return view('test');
-}) ;
-//routes for immobiliers ventes
- */Auth::routes();
-Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
-Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');
- 
-Route::post('/immo_vente', 'ImmobilierController@filter')->name('immo.filter');
-
-Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
-
 /************************************************* ADMIN */
-    Route::get('/admin', 'AdminController@login')->name('admin.login');
+Route::get('/admin', 'AdminController@login')->name('admin.login');
 // Route::get('/home', 'AdminController@index')->name('admin.index');
 Route::get('/index', 'AdminController@index')->name('admin.index');
 Route::get('/edit_profile', 'AdminController@edit')->name('admin.edit.profile');
@@ -66,6 +27,51 @@ Route::post('/resets', 'AdminController@reset')->name('admin.password_reset');
 Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile');
 
 
+
+
+
+
+
+/*
+Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
+Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser'); */
+
+Route::get('/admin/car/create', 'CarController@create')->name('car.create');
+Route::post('/scar', 'CarController@store')->name('car.store');
+
+Route::get('/admin/car/edit/{car}', 'CarController@edit')->name('car.edit');
+Route::post('/scaredit/{car}', 'CarController@storeEdit')->name('car.storeEdit');
+
+Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar.index');
+
+Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
+
+Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
+Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
+ 
+Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
+Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');
+
+/* passwords */
+Route::get('/forgetPassword', 'Auth\ResetPasswordController@email')->name('password.forget');
+Route::post('/fsendingResetLink', 'Auth\ResetPasswordController@sendEmail')->name('password.send');
+
+Route::get('/reset_password/{user}/{token}', 'Auth\ResetPasswordController@prev_reset')->name('password.prevreset');
+Route::post('/reset_password_', 'Auth\ResetPasswordController@reset')->name('password.reset');
+
+/************************************************* ADMIN */
+Route::get('/admin', 'AdminController@login')->name('admin.login');
+// Route::get('/home', 'AdminController@index')->name('admin.index');
+Route::get('/index', 'AdminController@index')->name('admin.index');
+Route::get('/edit_profile', 'AdminController@edit')->name('admin.edit.profile');
+Route::get('/settings', 'AdminController@settings')->name('admin.settings');
+Route::get('/settings_done', 'AdminController@done')->name('admin.settings.done');
+Route::post('/resets', 'AdminController@reset')->name('admin.password_reset');
+
+Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -86,12 +92,54 @@ Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar
 Route::get('/admin/immo/{categorie}', 'AdminController@indexImmo')->name('admin.immobilier');
 Route::post('immo/create', 'ImmobilierController@create')->name('immobilier.create');
 Route::get('immo/create/index', 'ImmobilierController@indexCreate')->name('immobilier.indexCreate');
+Route::get('immo/destroy/{immobilier}', 'ImmobilierController@destroy')->name('admin.immo.delete');
+ Route::get('immo/update/{immobilier}', 'ImmobilierController@indexUpdate')->name('admin.immobilier.indexUpdate');
+  
+ 
+
+
+Route::post('/simmoedit/{immobilier}', 'ImmobilierController@update')->name('admin.immobilier.update');
 
 Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
-Route::get('immo/index', 'ImmobilierController@index')->name('admin.immobilier.index');
 
 Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
 Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
 
 Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
 Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');
+
+Route::get('/test', 'ImmobilierController@test')->name('immobilier.index');
+
+Auth::routes();
+
+/***** Site */
+if(!isset($_SESSION['lang'])){
+    $_SESSION['lang'] = "fr";
+}
+Route::redirect('/', '/'.$_SESSION['lang']);
+Route::group(['prefix' => '{lang}'], function () {
+
+
+Route::get('/', 'HomeController@index')->name('home');
+
+/*********** */
+Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
+Route::get('/details/{car}', 'CarController@show')->name('car.show');
+Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
+
+Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
+
+Route::get('/reservationimmol/{immobilier}', 'ReservationLocationController@create')->name('reservationLocation.create');
+Route::post('/rsimmol', 'ReservationLocationController@store')->name('reservationLocation.store');
+
+Route::get('/reservationimmov/{immobilier}', 'ReservationVenteController@create')->name('reservationVente.create');
+Route::post('/rsimmov', 'Res
+
+ervationVenteController@store')->name('reservationVente.store');
+
+Route::get('/immo/type/{mycategorie}/{type}', 'ImmobilierController@index')->name('immobilier.show');
+  
+ 
+Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
+});
+
