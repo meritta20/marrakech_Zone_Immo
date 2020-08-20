@@ -36,11 +36,7 @@
 
 
                     <div class="card-header">
-<<<<<<< HEAD
-                            <h4>{{__('Configurer votre compte')}}</h4>
-=======
                             <h4>{{__('Configure votre compte')}}</h4>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
                         </div>
                         <div class="card-body">

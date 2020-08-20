@@ -84,84 +84,6 @@
               </div>
             </div>
           </div>
-<<<<<<< HEAD
-
-          
-
-            <div class="">
-              <div class="">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>{{__('Reservations')}}</h4>
-                  </div>
-                  <div class="card-body">
-                    <ul class="nav nav-tabs" id="myTab5" role="tablist">
-                      <li class="nav-item">
-                        <a class="nav-link active" id="home-tab5" data-toggle="tab" href="#home5" role="tab" aria-controls="home" aria-selected="true">
-                          <i class="fas fa-home"></i> immobiliers(ACHAT/VENTES)</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile" aria-selected="false">
-                          <i class="fas fa-home"></i> immobiliers(LOCATION)</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="contact-tab5" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact" aria-selected="false">
-                          <i class="fas fa-car"></i> véhicules</a>
-                      </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent5">
-                      <div class="tab-pane fade show active" id="home5" role="tabpanel" aria-labelledby="home-tab5">
-                        {{-- start  --}}
-                        <div class="">
-              <div class="card">
-                <div class="card-header">
-                  <h4>{{__('Reservations des immobiliers(ACHAT/VENTES)')}}</h4>
-                  {{-- <div class="card-header-action">
-                    <a href="#" class="btn btn-primary">View All</a>
-                  </div> --}}
-                </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table table-striped mb-0">
-                      <thead>
-                      
-                        
-                      
-                        <tr>
-                          <th>id</th>
-                          <th>nom</th>
-                          <th>prenom</th>
-                          <th>email</th>
-                          <th>tele</th>
-                          <th>produit</th>
-                          <th>date reservation</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach($reservation_ventes as $immobilier)
-                        <tr>
-                          <td>
-                            {{$immobilier->id}}
-                          </td>
-                          <td>
-                          {{$immobilier->last_name}}
-                          </td>
-                          <td>
-                          {{$immobilier->first_name}}
-                          </td>
-                          <td>
-                          {{$immobilier->email}}
-                          </td>
-                          <td>
-                          {{$immobilier->tele}}
-                          </td>
-                          <td>
-                          {{$immobilier->designation}}
-                          </td>
-                          <td>
-                          {{$immobilier->res_created_at}}
-                          </td>
-=======
 
 
 
@@ -365,7 +287,6 @@
                             @endif
                           </td> --}}
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                         </tr>
                         @endforeach
                       </tbody>
@@ -402,10 +323,7 @@
                           <th>date reservation</th>
                           <th>date debut</th>
                           <th>date fin</th>
-<<<<<<< HEAD
-=======
                           <th>action</th>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                         </tr>
                       </thead>
                       <tbody>
@@ -428,80 +346,6 @@
                           </td>
                           <td>
                           {{$immobilier->nbr_personnes}}
-<<<<<<< HEAD
-                          </td>
-                          <td>
-                          {{$immobilier->designation}}
-                          </td>
-                          <td>
-                          {{$immobilier->patente}}
-                          </td>
-                          <td>
-                          {{$immobilier->res_created_at}}
-                          </td>
-                          <td>
-                          {{$immobilier->date_debut_reservation}}
-                          </td>
-                          <td>
-                          {{$immobilier->date_fin_reservation}}
-                          </td>
-                        </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              </div>
-                        {{-- end  --}}
-                         </div>
-                      <div class="tab-pane fade" id="contact5" role="tabpanel" aria-labelledby="contact-tab5">
-                        {{-- start  --}}
-                        <div class="">
-               <div class="card">
-                <div class="card-header">
-                  <h4>{{__('Reservations des véhicules')}}</h4>
-                  {{-- <div class="card-header-action">
-                    <a href="#" class="btn btn-primary">View All</a>
-                  </div> --}}
-                </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table table-striped mb-0">
-                      <thead>
-                        <tr>
-                          <th>id</th>
-                          <th>nom</th>
-                          <th>prenom</th>
-                          <th>email</th>
-                          <th>tele</th>
-                          <th>produit</th>
-                          <th>date reservation</th>
-                          <th>date debut</th>
-                          <th>date fin</th>
-                          <th>avec chauffeur</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      @foreach($reservation_cars as $car)
-                        <tr>
-                          <td>
-                            {{$car->id}}
-                          </td>
-                          <td>
-                          {{$car->last_name}}
-                          </td>
-                          <td>
-                          {{$car->first_name}}
-                          </td>
-                          <td>
-                          {{$car->email}}
-                          </td>
-                          <td>
-                          {{$car->tele}}
-                          </td>
-                          <td>
-=======
                           </td>
                           <td>
                           {{$immobilier->designation}}
@@ -586,7 +430,6 @@
                           {{$car->tele}}
                           </td>
                           <td>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                           {{$car->libelle}}
                           </td>
                           <td>
@@ -651,17 +494,10 @@
             </div>
 
 
-<<<<<<< HEAD
-            
-          </div>
-          
-          
-=======
 
           </div>
 
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         </section>
 @endsection
 @section('script-details-car')
@@ -699,11 +535,6 @@ var myChart = new Chart(ctx, {
     },
   }
 });
-<<<<<<< HEAD
-  </script>
-
-@endsection
-=======
 
 
 $(".btn-mx-ck").click(function(event){
@@ -736,4 +567,3 @@ $(".btn-mx-ck").click(function(event){
   </script>
 
 @endsection
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5

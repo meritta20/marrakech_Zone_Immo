@@ -1,6 +1,4 @@
 @extends('layouts.admin')
-<<<<<<< HEAD
-=======
 
 @section('section-search')
 
@@ -10,7 +8,6 @@
           </ul>
         </div>
 @endsection
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 @section('content')
 <div class="section">
@@ -33,17 +30,10 @@
                                     <div class="">
                                          <div class="">
                                     <div class="form-group row mb-4">
-<<<<<<< HEAD
-                                        <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __("image de partie voiture") }}</label>
-                                        <div class="col-sm-12 col-md-7">
-                                          <div id="image-preview_1" class="image-preview mx-image-preview">
-                                            <label for="image-upload_1" id="image-label_1">{{__("Image ici")}}</label>
-=======
                                         <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie 1') }}</label>
                                         <div class="col-sm-12 col-md-7">
                                           <div id="image-preview_1" class="image-preview mx-image-preview">
                                             <label for="image-upload_1" id="image-label_1">{{__('Image ici')}}</label>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                             <input id="image-upload_1" type="file" class=" @error('img_1') is-invalid @enderror" name="img_1" value="{{ old('img_1') }}"  autocomplete="img_1">
 
                                             @error('img_1')
@@ -57,11 +47,7 @@
                                     </div>
                  
                                     <div class="form-group row mb-4">
-<<<<<<< HEAD
-                                        <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie villas') }}</label>
-=======
                                         <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie 2') }}</label>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                         <div class="col-sm-12 col-md-7">
                                           <div id="image-preview_2" class="image-preview mx-image-preview">
                                             <label for="image-upload_2" id="image-label_2">{{__('Image ici')}}</label>
@@ -78,11 +64,7 @@
                                     </div>
 
                                     <div class="form-group row mb-4">
-<<<<<<< HEAD
-                                        <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie transport touristique') }}</label>
-=======
                                         <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie 3') }}</label>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                         <div class="col-sm-12 col-md-7">
                                           <div id="image-preview_3" class="image-preview mx-image-preview">
                                             <label for="image-upload_3" id="image-label_3">{{__('Image ici')}}</label>
@@ -99,11 +81,7 @@
                                     </div>
 
                                     <div class="form-group row mb-4">
-<<<<<<< HEAD
-                                        <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('iimage de partie appartements') }}</label>
-=======
                                         <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie 4') }}</label>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                         <div class="col-sm-12 col-md-7">
                                           <div id="image-preview_4" class="image-preview mx-image-preview">
                                             <label for="image-upload_4" id="image-label_4">{{__('Image ici')}}</label>
@@ -118,8 +96,6 @@
                                           </div>
                                         </div>
                                     </div>
-<<<<<<< HEAD
-=======
 
                                     <div class="form-group row mb-4">
                                       <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __('image de partie 5') }}</label>
@@ -138,7 +114,6 @@
                                       </div>
                                   </div>
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                     <div class="form-group row" style="text-align: center;">
                                         <button class="btn btn-primary btn-wide" name="create_car">{{__('modifier')}}</button>
                                     </div>

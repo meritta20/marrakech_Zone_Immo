@@ -199,11 +199,7 @@
                 @endphp
             @endif
             <a href="{{ route($url,['lang'=>app()->getLocale(),'immobilier' => $immobilier->id]) }}" class="btn btn-primary ">
-<<<<<<< HEAD
-                Reserver maintenant</a>
-=======
                 {{ __("Reserver maintenant") }}</a>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         </div>
 
         </div>

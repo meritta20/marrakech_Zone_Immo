@@ -23,7 +23,6 @@ class ImmobilierController extends Controller
      */
     public function index($lang, $mycategorie, $type)
     {
-<<<<<<< HEAD
 
         $home_carasoul = DB::table('gallery_home_carasouls')->where('id', 1)->get();
 
@@ -36,15 +35,6 @@ class ImmobilierController extends Controller
             'home_carasoul' => $home_carasoul,
 
         ]);
-=======
-        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',2)->get();
-
-        $query=DB::table('immobiliers')->where([['categorie',3],['deleted',0],['validated',1]])->get();
-        return view('immobiliers.immobilier_ventes',[
-            'immos'=>$query ,
-            'home_carasoul'=>$home_carasoul ,
-            ]);
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
     }
 
     /**
@@ -265,19 +255,11 @@ class ImmobilierController extends Controller
      * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function show($lang, Immobilier $immobilier)
     {
 
         $gallery = DB::table('gallery_immos')->where('immobilier_id', $immobilier->id)->get();
         return view('immobiliers.details', ['immobilier' => $immobilier, 'gallery' => $gallery]);
-=======
-    public function show($lang,Immobilier $immobilier)
-    {
-
-        $gallery=DB::table('gallery_immos')->where('immobilier_id',$immobilier->id)->get();
-      return view('immobiliers.details',['immobilier'=>$immobilier,'gallery'=>$gallery]);
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
     }
 
     /**
@@ -288,22 +270,12 @@ class ImmobilierController extends Controller
      */
     public function show_location()
     {
-<<<<<<< HEAD
         $query = DB::table('immobiliers')->where('categorie', 1)->get();
         $home_carasoul = DB::table('gallery_home_carasouls')->where('id', 2)->get();
         return view('immobiliers.immobilier_location', [
             'immos' => $query,
             'home_carasoul' => $home_carasoul,
         ]);
-=======
-        $query=DB::table('immobiliers')->where([['categorie',1],['deleted',0],['validated',1]])->get();
-        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',2)->get();
-        return view('immobiliers.immobilier_location',[
-            'immos'=>$query ,
-            'home_carasoul'=>$home_carasoul ,
-            ]);
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
     }
 
     /**

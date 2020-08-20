@@ -19,10 +19,7 @@ class CreateGalleryHomeCarasoulsTable extends Migration
             $table->string('sec_img');
             $table->string('third_img');
             $table->string('fourth_img');
-<<<<<<< HEAD
-=======
             $table->string('fifth_img');
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
             $table->timestamps();
         });
     }

@@ -22,10 +22,6 @@ $(window).ready(function(){
     }
 
     /* to update images */
-<<<<<<< HEAD
-=======
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 });
 $("#marque").change(function(){
     if($("#marque").val() == "..."){
@@ -47,11 +43,6 @@ $(document).ready(function(){
         var srh_txt = $(".search-element input").val().toLowerCase();
         var wds = ".mxd-2 .mxd-3";
         if(srh_txt != ""){
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         /* $(".tmx").addClass("display-wd");
         $(".pmx").addClass("pmx-p"); */
         }
@@ -70,17 +61,10 @@ $(document).ready(function(){
           swal("Recherche introuvable!", "verifiez votre recherche et réeassayer à nouveau!", "error");
           $(wds).each(function(){
             $(this).removeClass("display-wd");
-<<<<<<< HEAD
-            
-       });
-          
-                                                
-=======
 
        });
 
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         }else{
           $(".btn-all-mx").removeClass("display-wd");
         }
@@ -110,15 +94,6 @@ $(document).ready(function(){
 
       var id =  $(".c").children("option:selected").attr('data');
 
-<<<<<<< HEAD
-    cat_ids.forEach(element => {
-      if( element.getAttribute("data") == id ){
-          element.classList.remove("display-wd");
-      }else{
-        element.classList.add("display-wd");
-      }
-
-=======
       $(".op").each(function(){
         if( $(this).attr("data") == id ){
           $(this).removeClass("display-wd");
@@ -142,7 +117,6 @@ $(document).ready(function(){
       });
       
       $("#marque_sub").val($("#marque").val());
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 /*end before event change */
   $(".c").change(function(){
       var cat_ids = $(".op").toArray();
@@ -153,25 +127,6 @@ $(document).ready(function(){
 
       var id =  $(this).children("option:selected").attr('data');
 
-<<<<<<< HEAD
-    cat_ids.forEach(element => {
-      if( element.getAttribute("data") == id ){
-          element.classList.remove("display-wd");
-      }else{
-        element.classList.add("display-wd");
-      }
-
-    });
-
-    cat_ids.forEach(element => {
-      if( element.getAttribute("value") == val ){
-          element.classList.remove("display-wd");
-          element.style.background = "pink";
-      }
-
-    });
-
-=======
       $(".op").each(function(){
         if( $(this).attr("data") == id ){
           $(this).removeClass("display-wd");
@@ -200,7 +155,6 @@ $(document).ready(function(){
 
     });
     $("#marque_sub").val($("#marque").val());
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
   });
 
 

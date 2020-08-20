@@ -26,11 +26,7 @@
 }
 .mx-container-5{
     padding-top: 3%;
-<<<<<<< HEAD
-    width: 95%;/* 
-=======
     width: 95%;/*
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
     height: 100vh; */
 }
 .mx-container-6{
@@ -1319,12 +1315,6 @@ font-size: 1vw;
 
 
 
-<<<<<<< HEAD
-       /* for mx.js search btn*/      
-       display-wd-p{
-          display: none;
-       }
-=======
        /* for mx.js search btn*/
        display-wd-p{
           display: none;
@@ -1355,4 +1345,3 @@ font-size: 1vw;
                           font-size: 4vw !important;
                     }
                     }
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5

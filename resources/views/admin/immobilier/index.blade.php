@@ -17,7 +17,7 @@
     }</script>
 @endif
 
-@if(Session::get('empty')==1)
+@if(isset($empty) && $empty==1)
 
 <script>
     window.onload=function(){

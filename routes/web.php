@@ -27,8 +27,6 @@ Route::post('/resets', 'AdminController@reset')->name('admin.password_reset');
 Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile');
 
 
-<<<<<<< HEAD
-=======
 
 Route::post('/admin/ajax', 'AjaxController@ajax')/* ->name('admin.ajax') */;
 
@@ -36,6 +34,11 @@ Auth::routes();
 
 
 
+/*
+Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
+Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser'); */
+Route::get('/admin/car/create', 'CarController@create')->name('car.create');
+Route::post('/scar', 'CarController@store')->name('car.store');
 
 Route::get('/admin/car/create', 'CarController@create')->name('car.create');
 Route::post('/scar', 'CarController@store')->name('car.store');
@@ -46,13 +49,12 @@ Route::post('/scaredit/{car}', 'CarController@storeEdit')->name('car.storeEdit')
 Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar.index');
 
 Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
-
+ 
 Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
 Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
-
+ 
 Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
 Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');
-
 Route::get('/admin/home/infos', 'HomeController@createInfos')->name('homeInfos.create');
 Route::post('/shomeinfos', 'HomeController@storeInfos')->name('homeInfos.store');
 
@@ -63,66 +65,14 @@ Route::get('/admin/reservationImmoV/delete/{reservation}', 'ReservationVenteCont
 /* passwords */
 Route::get('/forgetPassword', 'Auth\ResetPasswordController@email')->name('password.forget');
 Route::post('/fsendingResetLink', 'Auth\ResetPasswordController@sendEmail')->name('password.send');
-
-Route::get('/reset_password/{user}/{token}', 'Auth\ResetPasswordController@prev_reset')->name('password.prevreset');
-Route::post('/reset_password_', 'Auth\ResetPasswordController@reset')->name('password.reset');
-
-
-
-
-/***** Site */
-if(!isset($_SESSION['lang'])){
-    $_SESSION['lang'] = "fr";
-}
-Route::redirect('/', '/'.$_SESSION['lang']);
-Route::group(['prefix' => '{lang}'], function () {
-
-
-Route::get('/', 'HomeController@index')->name('home');
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
-
-
-
-
-<<<<<<< HEAD
-
-/*
-Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
-Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser'); */
-
-Route::get('/admin/car/create', 'CarController@create')->name('car.create');
-Route::post('/scar', 'CarController@store')->name('car.store');
-
-Route::get('/admin/car/edit/{car}', 'CarController@edit')->name('car.edit');
-Route::post('/scaredit/{car}', 'CarController@storeEdit')->name('car.storeEdit');
-
-Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar.index');
-
-Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
-
-Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
-Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
  
-Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
-Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');
 
-/* passwords */
-Route::get('/forgetPassword', 'Auth\ResetPasswordController@email')->name('password.forget');
-Route::post('/fsendingResetLink', 'Auth\ResetPasswordController@sendEmail')->name('password.send');
-=======
-Route::get('/reservationimmov/{immobilier}', 'ReservationVenteController@create')->name('reservationVente.create');
-Route::post('/rsimmov', 'ReservationVenteController@store')->name('reservationVente.store');
-
-
-Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
-Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 Route::get('/reset_password/{user}/{token}', 'Auth\ResetPasswordController@prev_reset')->name('password.prevreset');
 Route::post('/reset_password_', 'Auth\ResetPasswordController@reset')->name('password.reset');
 
-<<<<<<< HEAD
 /************************************************* ADMIN */
+
 Route::get('/admin', 'AdminController@login')->name('admin.login');
 // Route::get('/home', 'AdminController@index')->name('admin.index');
 Route::get('/index', 'AdminController@index')->name('admin.index');
@@ -137,15 +87,12 @@ Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile')
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-=======
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
 Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser');
 
-<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -182,10 +129,12 @@ Route::get('/test', 'ImmobilierController@test')->name('immobilier.index');
 Auth::routes();
 
 /***** Site */
-if(!isset($_SESSION['lang'])){
+ 
+ if(!isset($_SESSION['lang'])){
     $_SESSION['lang'] = "fr";
 }
 Route::redirect('/', '/'.$_SESSION['lang']);
+
 Route::group(['prefix' => '{lang}'], function () {
 
 
@@ -210,13 +159,13 @@ Route::get('/immo/type/{mycategorie}/{type}', 'ImmobilierController@index')->nam
   
  
 Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
-});
-=======
+
+Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
+Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser');
+
 Route::get('/error/404', function(){
     return view("errors.404");
 })->name('error.404');
 
 });
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
-
+ 

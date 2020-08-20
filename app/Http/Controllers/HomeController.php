@@ -26,13 +26,9 @@ class HomeController extends Controller
             'img_2' => ['image'],
             'img_3' => ['image'],
             'img_4' => ['image'],
-<<<<<<< HEAD
-         ]);
-=======
             'img_5' => ['image'],
          ]);
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
             if(array_key_exists("img_1",$data)){
             $imgpath_1 = request('img_1')->store('uploads-mx', 'public');
             }else{
@@ -53,14 +49,11 @@ class HomeController extends Controller
                         }else{
                             $imgpath_4 = $carasoul->fourth_img;
                         }
-<<<<<<< HEAD
-=======
                         if(array_key_exists("img_5",$data)){
                             $imgpath_5 = request('img_5')->store('uploads-mx', 'public');
                             }else{
                                 $imgpath_5 = $carasoul->fifth_img;
                             }
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 
 
@@ -75,11 +68,7 @@ class HomeController extends Controller
                 'fifth_img' => $imgpath_5 ,
             ],
         );
-<<<<<<< HEAD
-        $url = route('home') ;
-=======
         $url = route('homeCarasoul.create') ;
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         $lib = "diaporama";
         return view('done.modificationDone',compact('url','lib'));
     }
@@ -120,11 +109,7 @@ class HomeController extends Controller
                 'sec_img' => $imgpath_2 ,
             ],
         );
-<<<<<<< HEAD
-        $url = route('home') ;
-=======
         $url = route('homeSections.create') ;
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         $lib = "section";
         return view('done.modificationDone',compact('url','lib'));
     }
@@ -177,13 +162,8 @@ class HomeController extends Controller
     public function index()
     {
         $myQueri=DB::table('immobiliers')->where('categorie',3)->limit(5)->get();
-<<<<<<< HEAD
-        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',1)->get();
-        $home_sections = DB::table('gallery_home_sections')->where('id',1)->get();
-=======
         $home_carasoul = DB::table('gallery_home_carasouls')->where('id',2)->get();
         $home_sections = DB::table('gallery_home_sections')->where('id',2)->get();
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
         return view('welcome',compact('myQueri','home_carasoul','home_sections'));
     }
 }

@@ -1,20 +1,13 @@
 @extends('layouts.admin')
 
-<<<<<<< HEAD
-=======
-@section('section-search')
-
         <div class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
           </ul>
         </div>
-@endsection
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
+ 
 @section('content')
 <div class="container" >
-    <div class="pt-50 pb-50">
 
         <div class="container">
 

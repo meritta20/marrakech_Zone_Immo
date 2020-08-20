@@ -392,11 +392,7 @@
 
 								<div class="mx-trip-guide-item trip-guide-item" style="background-color:white">
 									<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}">
-<<<<<<< HEAD
-										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="cliquez ici pour plus de details">
-=======
 										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="{{ __("cliquez ici pour plus de details") }}">
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 											<img src="/storage/{{ $immo->pic_src }}" alt="images" />
 										</div>
 									</a>
@@ -426,11 +422,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12 col-sm-6 text-right">
-<<<<<<< HEAD
-												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
-=======
 												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">{{__("Reserver")}}</a>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 											</div>
 										</div>

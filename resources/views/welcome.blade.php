@@ -11,7 +11,6 @@
 @endif
 <style>
 	/* .carousel { z-index: -99; } keeps this behind all content */
-
 	.carousel .one {
 		background: url({{ $str }}{{ $home_carasoul[0]->first_img }});
 		background-size: cover;
@@ -19,31 +18,24 @@
 		background-repeat: no-repeat;
 		-moz-background-size: cover;
 	}
-
 	.carousel .two {
 		background: url({{ $str }}{{ $home_carasoul[0]->sec_img }});
 		background-size: cover;
 		background-repeat: no-repeat;
-
 		background-position: center;
-
 		-moz-background-size: cover;
 	}
-
 	.carousel .three {
 		background: url({{ $str }}{{ $home_carasoul[0]->third_img }});
 		background-position: center;
 		background-repeat: no-repeat;
-
 		background-size: cover;
 		-moz-background-size: cover;
 	}
-
 	.carousel .four {
 		background: url({{ $str }}{{ $home_carasoul[0]->fourth_img }});
 		background-position: center;
 		background-repeat: no-repeat;
-
 		background-size: cover;
 		-moz-background-size: cover;
 	}
@@ -51,7 +43,6 @@
 		background: url({{ $str }}{{ $home_carasoul[0]->fifth_img }});
 		background-position: center;
 		background-repeat: no-repeat;
-
 		background-size: cover;
 		-moz-background-size: cover;
 	}
@@ -61,7 +52,6 @@
 	.icon:hover{
 		color: orangered !important;
 	}
-
 </style>
     <!-- Carousel
                 ================================================== -->
@@ -99,7 +89,7 @@
 			</div>
 		</div>
 		<div class="item three d-block w-100">
-			<!-- <img class="third-slide" src="{{ asset("/") }}images/hero-header/04.jpg" alt="Third slide"> -->
+			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
 			<h1><br>{{ __('ventes et achats des biens immobilier') }}</h1>
@@ -108,7 +98,7 @@
 			</div>
 		</div>
 		<div class="item four d-block w-100">
-			<!-- <img class="third-slide" src="{{ asset("/") }}images/hero-header/04.jpg" alt="Third slide"> -->
+			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
 			<h1>{{__("Ventes Riad")}} </h1>
@@ -130,11 +120,11 @@
 	</div>
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		<span class="sr-only">{{__("Précédent")}}</span>
+		<span class="sr-only">Previous</span>
 	</a>
 	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">{{__("Suivant")}}</span>
+		<span class="sr-only">Next</span>
 	</a>
 </div>
 <!-- /.carousel -->
@@ -155,7 +145,6 @@
 		margin: auto;
 		margin-top: 30px;
 		margin-bottom: 50px;
-
 	}
 </style>
             <div class="row">
@@ -164,7 +153,11 @@
 						<div class="icon"> <i class="ri ri-user"></i></div>
 						<div class="content text-center">
 							<h6 style="color:#F07D37">{{__("Besoin d'un chauffeur qui vous guide?")}}</h6>
+							<span>{{ __('Nous somme ici pour vous aider.') }}</span>
 						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 mb-20-xs">
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"><i class="ri ri-location"></i></div>
 						<div class="content text-center">
@@ -198,12 +191,10 @@
 @php
 	$str ="";
 @endphp
-@if(isset($home_sections))
 @if($home_sections[0]->id == 2)
 	@php
 		$str ="/storage/";
 	@endphp
-@endif
 @endif
     <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('{{ $str }}{{ $home_sections[0]->first_img }}')">
 
@@ -220,7 +211,7 @@
 
                         </div>
 
-                    <a  href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">
+                    <a  href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> 3,'type'=> 1])}}">
                         {{ __('DÉCOUVRIR MAINTENANT') }}
                     </a>
                     </div>
@@ -248,7 +239,7 @@
 
                         </div>
 
-                    <a  href="{{ route('immobilier_loc.index',['lang'=> app()->getLocale()]) }}">
+                    <a  href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> 3,'type'=> 1])}}">
                         {{ __("DÉCOUVRIR MAINTENANT") }}
                     </a>
                     </div>
@@ -277,7 +268,7 @@
         </div>
     </div>
 	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
-@if(count($myQueri)==5)
+
     <div class="grid-container">
         <div class="big-item">
             <img src="/storage/{{$myQueri[0]->pic_src}}" alt="images" />
@@ -329,7 +320,6 @@
                 {{ __("DETAILS") }}
             </a>
                 </div>
-	</div>
-	@endif
+    </div>
 </div>
 @endsection

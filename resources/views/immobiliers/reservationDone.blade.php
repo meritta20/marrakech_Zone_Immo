@@ -30,15 +30,7 @@
                             $url = "immobilier_loc.index";
                         @endphp
                         @endif
-<<<<<<< HEAD
-                        <a href="{{route($url,['lang'=>app()->getLocale()])}}" class="btn btn-primary btn-wide">retour au choix des immobiliers</a>
-=======
-                        <a href="{{route($url,['lang'=>app()->getLocale()])}}" class="btn btn-primary btn-wide">{{__("retour au choix des immobiliers")}}</a>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                     </div>
-
-                </div>
-
             </div>
 
         </div>

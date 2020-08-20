@@ -1,8 +1,4 @@
 @extends('layouts.admin')
-<<<<<<< HEAD
-=======
-
-@section('section-search')
 
         <div class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
@@ -10,10 +6,8 @@
           </ul>
         </div>
 @endsection
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 @section('content')
-<div class="section">
 <div class="section-header">
 <h1>{{__("Modification des images de sections de page d'accueil")}}</h1>
 </div>
@@ -49,10 +43,6 @@
                                           </div>
                                         </div>
                                     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __("image de section d'immobilier") }}</label>
                                         <div class="col-sm-12 col-md-7">
@@ -81,10 +71,6 @@
 
 						</div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 					</div>
 

@@ -35,12 +35,8 @@ class CreateImmobiliersTable extends Migration
             $table->string('pic_src');
             $table->integer('date_seperator')->nullable();
 
-<<<<<<< HEAD
-            $table->foreign('id_adresse')->references('id')->on('adresse');
-=======
             $table->foreign('id_commune')->references('id')->on('communes');
             $table->foreign('created_by')->references('id')->on('customers');
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
             $table->foreign('id_type')->references('id')->on('type_immobiliers');
 
             $table->timestamps();

@@ -57,7 +57,6 @@ $.uploadPreview({
   label_default: "Choose File",   // Default: Choose File
   label_selected: "Change File",
   img_top: "#img_top_5",  // Default: Change File
-<<<<<<< HEAD
   no_label: false,                // Default: false
   success_callback: null          // Default: null
 });$.uploadPreview({
@@ -85,8 +84,6 @@ $.uploadPreview({
   label_default: "Choose File",   // Default: Choose File
   label_selected: "Change File",
   img_top: "#img_top_8",  // Default: Change File
-=======
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
   no_label: false,                // Default: false
   success_callback: null          // Default: null
 });

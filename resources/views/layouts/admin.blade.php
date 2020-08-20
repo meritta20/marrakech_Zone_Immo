@@ -26,8 +26,6 @@
   <link rel="stylesheet" href="{{ asset('/') }}node_modules/selectric/public/selectric.css">
   <link rel="stylesheet" href="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
-<<<<<<< HEAD
-=======
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset('/') }}node_modules/summernote/dist/summernote-bs4.css">
@@ -37,7 +35,6 @@
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset('/') }}node_modules/chocolat/dist/css/chocolat.css">
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 	<!-- Fav and Touch Icons -->
     <title>Marrakech Zone Immo</title>
 	<link rel="shortcut icon" href="{{ url('images/ico/logo-zh-tours.png') }} ">
@@ -64,135 +61,7 @@
       @yield('section-search')
         {{-- end only on products --}}
         <ul class="navbar-nav navbar-right">
-<<<<<<< HEAD
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Messages
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
-                </div>
-              </div>
-              <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-1.png" class="rounded-circle">
-                    <div class="is-online"></div>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b>
-                    <p>Hello, Bro!</p>
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-2.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Dedik Sugiharto</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-3.png" class="rounded-circle">
-                    <div class="is-online"></div>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Agung Ardiansyah</b>
-                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-4.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Ardian Rahardiansyah</b>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                    <div class="time">16 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-5.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Alfa Zulkarnain</b>
-                    <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Notifications
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
-                </div>
-              </div>
-              <div class="dropdown-list-content dropdown-list-icons">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-icon bg-primary text-white">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Template update is available now!
-                    <div class="time text-primary">2 Min Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="far fa-user"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>You</b> and <b>Dedik Sugiharto</b> are now friends
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-success text-white">
-                    <i class="fas fa-check"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-danger text-white">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Low disk space. Let's clean it!
-                    <div class="time">17 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="fas fa-bell"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Welcome to Stisla template!
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </li>
-=======
           
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <div class="d-sm-none d-lg-inline-block">{{ __('Bonjour')}} Admin</div></a>
             <div class="dropdown-menu dropdown-menu-right">
@@ -236,10 +105,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="{{route('homeCarasoul.create')}}">{{ __('Diaporama') }}</a></li>
                   <li><a class="nav-link" href="{{route('homeSections.create')}}">{{ __('Sections') }}</a></li>
-<<<<<<< HEAD
-=======
                   <li><a class="nav-link" href="{{route('homeInfos.create')}}">{{ __('Infos et réseau sociaux') }}</a></li>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                 </ul>
               </li>
 
@@ -255,7 +121,6 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-home"></i><span>{{ __('Immobiliers') }}</span></a>
                 <ul class="dropdown-menu">
-<<<<<<< HEAD
                 @php $types=Session::get('types_immo')
                  @endphp
 
@@ -265,23 +130,12 @@
 
                
              
-=======
-                @if(isset($types_immo))
-
-                @foreach($types_immo as $type)
-                  <li><a class="nav-link" href="layout-default.html">{{ __($type->lib) }}</a></li>
-                @endforeach
-
-
-                @endif
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                 </ul>
               </li>
 
-              <li class="menu-header">{{ __('Paramétre') }}</li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link " data-toggle="dropdown"><i class="fas fa-cog"></i><span>{{ __('Paramétre') }}</span></a>
-
+              <li class="menu-header">{{ __('Paramètre') }}</li>
+              <li class="nav-item dropdown ">
+                <a href="{{route('admin.settings')}}" class="nav-link "><i class="fas fa-cog"></i><span>{{ __('Paramètre') }}</span></a>
               </li>
 
             </ul>
@@ -311,46 +165,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<<<<<<< HEAD
-  <script src="{{ asset('assetsAdmin/js/stisla.js') }} "></script>
-
-  <!-- JS Libraies -->
-  <script src="{{url('node_modules/simpleweather/jquery.simpleWeather.min.js')}}"></script>
-  <script src="{{url('node_modules/chart.js/dist/Chart.min.js')}}"></script>
-  <script src="{{url('node_modules/jqvmap/dist/jquery.vmap.min.js')}}"></script>
-  <script src="{{url('node_modules/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
-  <script src="{{url('node_modules/summernote/dist/summernote-bs4.js')}}"></script>
-  <script src="{{url('node_modules/chocolat/dist/js/jquery.chocolat.min.js')}}"></script>
-
-  <!-- Template JS File -->
-   <script src="{{url('assetsAdmin/js/scripts.js')}}"></script>
-  <script src="{{url('assetsAdmin/js/custom.js')}}"></script>
-  <!-- Script for showing modals -->
-   <script src="{{url('assetsAdmin/js/page/modules-sweetalert.js')}}"></script>
-
-
-   <script src="{{url('node_modules/sweetalert/dist/sweetalert.min.js')}}"></script>
-
-  <!-- Template JS File -->
-  
-  <!-- Page Specific JS File -->
-  <script src="{{url('assetsAdmin/js/page/modules-sweetalert.js')}}"></script>
- 
-  <!-- JS Libraies -->
- 
-  <!-- Template JS File --> 
-
-  <!-- Page Specific JS File -->
- <!-- script for going to the previous window -->
-            
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
- @yield('myscripts')
- </body>
-=======
   <script src="{{ asset('/') }}assetsAdmin/js/stisla.js"></script>
 
   <!-- JS Libraies -->
@@ -379,8 +193,14 @@ function goBack() {
   <!-- Page Specific JS File -->{{--
   <script src="{{ asset('/') }}assetsAdmin/js/page/index-0.js"></script> --}}
   <script src="{{ asset('/') }}assetsAdmin/js/page/features-post-create.js"></script>
+  <script src="{{ asset('/') }}assetsAdmin/js/page/modules-sweetalert.js"></script>
 
   @yield('script-details-car')
+  <script>
+function goBack() {
+  window.history.back();
+}
+</script>
+ @yield('myscripts')
 </body>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 </html>

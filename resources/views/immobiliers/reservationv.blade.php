@@ -134,20 +134,12 @@
 											<li class="divider"></li>
 
 											<li>
-<<<<<<< HEAD
-												<a href="{{ route('immobilier_vente.index',['lang'=>app()->getLocale(),]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
-=======
 												<a href="{{ route('immobilier_vente.index',['lang'=>app()->getLocale(),]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE")}}</a>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-<<<<<<< HEAD
-												<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
-=======
 												<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("RETOUR AU DETAILS")}}</a>
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 											</li>
 
 										</ul>

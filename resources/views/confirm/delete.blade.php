@@ -1,7 +1,5 @@
 @extends('layouts.admin')
 
-<<<<<<< HEAD
-=======
 @section('section-search')
 
         <div class="form-inline mr-auto">
@@ -11,7 +9,6 @@
         </div>
 @endsection
 
->>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 @section('content')
 <div class="container " >
     <div class="pt-50 pb-50">
