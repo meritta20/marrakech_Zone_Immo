@@ -1,5 +1,17 @@
 @extends('layouts.admin')
 
+<<<<<<< HEAD
+=======
+@section('section-search')
+
+        <div class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+          </ul>
+        </div>
+@endsection
+
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 @section('content')
 <div class="section">
 <div class="section-header">
@@ -42,9 +54,18 @@
                                     <div class="form-group row">
                                         <label for="marque" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('marque de voiture') }}</label>
                                             <select name="marque_" class="mc form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="marque">
+<<<<<<< HEAD
                                                         @foreach($marques as  $marque)
                                                             <option class="op" data="{{$marque->categorie_id}}" value="{{ $marque->libelle }}" @if(old("marque_") == $car[0]->libelle) selected @endif >{{ $marque->libelle }}</option>
                                                         @endforeach
+=======
+                                                <option class="op" data="0" value="" ></option>
+                                                        @if(count($marques) >= 1)
+                                                        @foreach($marques as  $marque)
+                                                            <option class="op" data="{{$marque->categorie_id}}" value="{{ $marque->libelle }}" @if(old("marque_") == $car[0]->libelle) selected @endif >{{ $marque->libelle }}</option>
+                                                        @endforeach
+                                                        @endif
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                                         <option value="...">autre</option>
                                             </select>
 
@@ -206,10 +227,18 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                           <img id="img_top_1" src="/storage/{{ $car[0]->first_img }}" alt="img">
                                           </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-left col-12   mx-cap">{{ __('images secondaire 2') }}</label>
                                         <div class="col-sm-12 ">
@@ -261,7 +290,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group row  mt-0 ml-auto">
+<<<<<<< HEAD
                                         <button type="submit" class="btn btn-primary" name="create_car">{{__('Modifier')}}</button>
+=======
+                                        <button class="btn btn-primary" name="create_car">{{__('Modifier')}}</button>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                     </div>
                                    </div>
                                 </div>

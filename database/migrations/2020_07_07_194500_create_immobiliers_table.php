@@ -17,6 +17,7 @@ class CreateImmobiliersTable extends Migration
             $table->id();
             $table->foreignId('id_commune');
             $table->foreignId('id_type');
+            $table->foreignId('created_by');
 
             $table->string('designation');
             $table->string('categorie');
@@ -30,10 +31,16 @@ class CreateImmobiliersTable extends Migration
             $table->double('price_min');
             $table->double('superfecie');
             $table->string('deleted');
+            $table->string('confirmed');
             $table->string('pic_src');
             $table->integer('date_seperator')->nullable();
 
+<<<<<<< HEAD
             $table->foreign('id_adresse')->references('id')->on('adresse');
+=======
+            $table->foreign('id_commune')->references('id')->on('communes');
+            $table->foreign('created_by')->references('id')->on('customers');
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
             $table->foreign('id_type')->references('id')->on('type_immobiliers');
 
             $table->timestamps();

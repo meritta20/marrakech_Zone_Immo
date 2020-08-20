@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "/start/layouts/app": "" ,
 
     "Accueil": "Home" ,
@@ -106,3 +107,8 @@
     "end/immobiliers/details": "" 
 
 }
+=======
+    "Creer une fiche de voiture": "Create your car sheet" ,
+    "Besoin d'un chauffeur qui vous guide?": "need a driver to guide you?"
+}
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5

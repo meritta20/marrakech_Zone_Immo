@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="{{ csrf_token() }}" name="csrf-token">
 
   
   <!-- General CSS Files -->
@@ -25,6 +26,18 @@
   <link rel="stylesheet" href="{{ asset('/') }}node_modules/selectric/public/selectric.css">
   <link rel="stylesheet" href="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
+<<<<<<< HEAD
+=======
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/summernote/dist/summernote-bs4.css">
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/selectric/public/selectric.css">
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+  
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/chocolat/dist/css/chocolat.css">
+
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 	<!-- Fav and Touch Icons -->
     <title>Marrakech Zone Immo</title>
 	<link rel="shortcut icon" href="{{ url('images/ico/logo-zh-tours.png') }} ">
@@ -51,6 +64,7 @@
       @yield('section-search')
         {{-- end only on products --}}
         <ul class="navbar-nav navbar-right">
+<<<<<<< HEAD
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">Messages
@@ -176,6 +190,9 @@
               </div>
             </div>
           </li>
+=======
+          
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <div class="d-sm-none d-lg-inline-block">{{ __('Bonjour')}} Admin</div></a>
             <div class="dropdown-menu dropdown-menu-right">
@@ -219,6 +236,10 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="{{route('homeCarasoul.create')}}">{{ __('Diaporama') }}</a></li>
                   <li><a class="nav-link" href="{{route('homeSections.create')}}">{{ __('Sections') }}</a></li>
+<<<<<<< HEAD
+=======
+                  <li><a class="nav-link" href="{{route('homeInfos.create')}}">{{ __('Infos et réseau sociaux') }}</a></li>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                 </ul>
               </li>
 
@@ -234,6 +255,7 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-home"></i><span>{{ __('Immobiliers') }}</span></a>
                 <ul class="dropdown-menu">
+<<<<<<< HEAD
                 @php $types=Session::get('types_immo')
                  @endphp
 
@@ -243,6 +265,16 @@
 
                
              
+=======
+                @if(isset($types_immo))
+
+                @foreach($types_immo as $type)
+                  <li><a class="nav-link" href="layout-default.html">{{ __($type->lib) }}</a></li>
+                @endforeach
+
+
+                @endif
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                 </ul>
               </li>
 
@@ -279,6 +311,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<<<<<<< HEAD
   <script src="{{ asset('assetsAdmin/js/stisla.js') }} "></script>
 
   <!-- JS Libraies -->
@@ -317,4 +350,37 @@ function goBack() {
 </script>
  @yield('myscripts')
  </body>
+=======
+  <script src="{{ asset('/') }}assetsAdmin/js/stisla.js"></script>
+
+  <!-- JS Libraies -->
+  <script src="{{ asset('/') }}node_modules/simpleweather/jquery.simpleWeather.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/jqvmap/dist/jquery.vmap.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="{{ asset('/') }}node_modules/summernote/dist/summernote-bs4.js"></script>
+  <script src="{{ asset('/') }}node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+  <script src="{{ asset('/') }}node_modules/selectric/public/jquery.selectric.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.js"></script>
+  <script src="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+
+  <script src="{{ asset('/') }}node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+
+<!-- JS Libraies -->
+  <script src="{{ asset('/') }}node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Template JS File -->
+  <script src="{{ asset('/') }}assetsAdmin/js/scripts.js"></script>
+  <script src="{{ asset('/') }}assetsAdmin/js/custom.js"></script>
+
+
+  <!-- Page Specific JS File -->{{--
+  <script src="{{ asset('/') }}assetsAdmin/js/page/index-0.js"></script> --}}
+  <script src="{{ asset('/') }}assetsAdmin/js/page/features-post-create.js"></script>
+
+  @yield('script-details-car')
+</body>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 </html>

@@ -20,6 +20,10 @@
 @section('content')
 <div class="section">
 <div class="section-header">
+<<<<<<< HEAD
+=======
+@if (count($cars_s) >= 1)
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 @foreach ($cars_s as $key=>$car)
  @php
    $categorie_id = $car->categorie_id ;
@@ -30,7 +34,13 @@
  @else
  <h1>{{__('Liste des voitures de transport touristique')}}</h1>
  @endif
+<<<<<<< HEAD
 
+=======
+ @else
+ <h1>{{__('pas de voiture inserée! vous pouvez creer une!')}}</h1>
+@endif
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 <div class="article-cta section-header-breadcrumb">
                       <a href="{{route('car.create')}}" class="btn btn-primary m-auto">{{__('Creer une fiche de voiture')}}</a>
                     </div>

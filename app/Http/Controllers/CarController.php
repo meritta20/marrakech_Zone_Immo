@@ -22,7 +22,11 @@ class CarController extends Controller
 
     public function index($lang,\App\CategorieCar $categorie)
     {
+<<<<<<< HEAD
         $home_carasoul = DB::table('gallery_home_carasouls')->where('id',1)->get();
+=======
+        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',2)->get();
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
         $marques = DB::table('marques')->where('categorie_id',$categorie->id)
         ->join('cars','cars.marque_id','=','marques.id')
@@ -187,6 +191,10 @@ class CarController extends Controller
                 ->get();
          return view('cars.update',compact('car','marques'));
      }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
      /**
       * Store a newly created resource in storage.
       *
@@ -225,6 +233,10 @@ class CarController extends Controller
             }else{
                 $imgpath_1 = $car[0]->pic_src;
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
             if(array_key_exists("img_1",$data)){
             $imgpath_2 = request('img_1')->store('uploads-mx', 'public');
             }else{

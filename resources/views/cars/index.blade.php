@@ -47,6 +47,14 @@
 
 		background-size: cover;
 		-moz-background-size: cover;
+    }
+    .carousel .five {
+		background: url({{ $str }}{{ $home_carasoul[0]->fifth_img }});
+		background-position: center;
+		background-repeat: no-repeat;
+
+		background-size: cover;
+		-moz-background-size: cover;
 	}
 	.fas .fa-star{
 		background-color:#C89005;
@@ -65,6 +73,7 @@
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
 
 	</ol>
 	<div class="carousel-inner" role="listbox" style="height:40vh">
@@ -74,7 +83,11 @@
   -->
 			<div class="carousel-caption mx-carousoul-p">
 
+<<<<<<< HEAD
 				<p class="meri-titles">{{__('Garantir la meilleure qualité des voitures est notre plaisir')}}</p>
+=======
+				<p class="meri-titles">{{__('Acquérir votre bien à Marrakech')}}</p>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
 			</div>
 
@@ -84,7 +97,11 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
+<<<<<<< HEAD
 				<p class="meri-titles">{{__('Trouvez votre place avec une expérience photo immersive')}}</p>
+=======
+				<p class="meri-titles">{{__('locations saisonnières dans une villas luxueuses à Marrakech')}}</p>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 			</div>
 		</div>
 		<div class="item three d-block w-100">
@@ -92,7 +109,11 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
+<<<<<<< HEAD
 				<p class="meri-titles">{{__('Le confort et la sécurité que vous ne trouverez nulle part ailleurs')}}</p>
+=======
+				<p class="meri-titles">{{__('ventes et achats des biens immobilier')}}</p>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 			</div>
 		</div>
 		<div class="item four d-block w-100">
@@ -100,7 +121,19 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
+<<<<<<< HEAD
 				<p class="meri-titles">{{__("Nous vous aidons à trouvez l'appartement que vous aimerez")}}</p>
+=======
+				<p class="meri-titles">{{__("Ventes Riad")}}</p>
+			</div>
+        </div>
+        <div class="item five d-block w-100">
+			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
+
+			<div class="carousel-caption mx-carousoul-p">
+
+				<p class="meri-titles">{{__("Transport et location")}}</p>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 			</div>
 		</div>
 	</div>
@@ -145,13 +178,18 @@
                                 @php
                                 $c_data= 1;
                                 $key_c = 0;
-                                @endphp
+								@endphp
+								@if(count($cars_s) >= 1)
                         @foreach ($cars_s as $key=>$car)
                                 @php
                                     ++$key_c;
                                 @endphp
                                 <!-- real number  mx-n -->
+<<<<<<< HEAD
                                 @if($key < 3)
+=======
+                                @if($key < 20)
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                 @php
                                     $style = "";
                                 @endphp
@@ -161,7 +199,11 @@
                                 @endphp
                                 @endif
                                 <!-- real number +1 mx-n -->
+<<<<<<< HEAD
                                 @if($key_c == 4)
+=======
+                                @if($key_c == 21)
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                 @php
                                     ++$c_data;
                                     $key_c = 1;
@@ -173,7 +215,11 @@
 
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="{{ route('car.show',['lang'=>app()->getLocale(),'car' => $car->id]) }}">
+<<<<<<< HEAD
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
+=======
+										<div class="trip-guide-image mx-trip-guide-image" title="{{ __("cliquez ici pour plus de details") }}">
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                             <img src="/storage/{{ $car->pic_src }}" alt="images" />
                                         </div>
                                      </a>
@@ -193,7 +239,11 @@
 											</div>
 											<div class="trip-guide-person mx-trip-guide-person clearfix">
 												<i class="fas fa-briefcase"> </i>
+<<<<<<< HEAD
 												<p class="name">{{__("charge maximale")}}: <span>{{ $car->charge_max }}Kg</span></p>
+=======
+												<p class="name">{{__("charge maximale")}}: <span>{{ $car->charge_max }}{{__("Kg")}}</span></p>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 											</div>
 											<div class="row gap-10 mx-price">
 												<div class="col-xs-12 col-sm-6">
@@ -214,7 +264,11 @@
 								</div>
                             <!-- end car widget -->
                             @endforeach
-
+                            @else
+                           <script>
+                               location.href = "{{ route('error.404',['lang'=>app()->getLocale()]) }}";
+                           </script>
+								@endif
 							</div>
 
 						</div>
@@ -224,12 +278,17 @@
 					<div class="pager-wrappper clearfix pmx">
 
 						<div class="pager-innner">
-
+							@if(count($cars_s) >= 1)
                                 @foreach ($cars_s as $key=>$car)
                                 @php
                                     ++$key;
                                 @endphp
-                                @endforeach
+								@endforeach
+								@else
+                                @php
+                                    $key = 0;
+                                @endphp
+								@endif
 								<div class="clearfix tmx">
 									{{__('plus de')}} <span id="nbr_ele">{{ $key }}</span> {{__('marques de voitures à choisir')}}
                                 </div>
@@ -254,7 +313,11 @@
                                             @php
                                                 ++$counter;
                                                 /* real number +1 mx-n */
+<<<<<<< HEAD
                                                 $cm = $counter%4 ;
+=======
+                                                $cm = $counter%21 ;
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
                                             @endphp
                                             @if($cm == 1 or $counter == 1)
                                             @if($counter == 1)

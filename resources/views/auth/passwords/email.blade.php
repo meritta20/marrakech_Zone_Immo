@@ -26,7 +26,11 @@
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="card">
+<<<<<<< HEAD
                                 <div class="card-header">{{ __('réinitiqlisqtion de mot de passe') }}</div>
+=======
+                                <div class="card-header">{{ __('réinitialisation de mot de passe') }}</div>
+>>>>>>> d6d5743fa07922659eb4d0baca532c6216f0a1c5
 
                                 <div class="card-body">
                                     @if (session('status'))
